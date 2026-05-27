@@ -28,31 +28,23 @@ export default function Navbar() {
   useEffect(() => {
     const sectionIds = navLinks.map((l) => l.href.replace("#", ""));
     const observers: IntersectionObserver[] = [];
-
     sectionIds.forEach((id) => {
       const el = document.getElementById(id);
       if (!el) return;
       const obs = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) setActiveSection(id);
-        },
+        ([entry]) => { if (entry.isIntersecting) setActiveSection(id); },
         { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
       );
       obs.observe(el);
       observers.push(obs);
     });
-
     return () => observers.forEach((obs) => obs.disconnect());
   }, []);
 
   return (
     <header
+      className="fixed top-0 left-0 right-0 z-50 w-full"
       style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 50,
         transition: "background 300ms ease, border-color 300ms ease, backdrop-filter 300ms ease",
         background: scrolled ? "rgba(10,10,10,0.95)" : "transparent",
         backdropFilter: scrolled ? "blur(12px)" : "none",
@@ -60,17 +52,8 @@ export default function Navbar() {
         borderBottom: scrolled ? "1px solid #2A2A2A" : "1px solid transparent",
       }}
     >
-      <div
-        style={{
-          maxWidth: 1280,
-          margin: "0 auto",
-          padding: "0 24px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          height: 72,
-        }}
-      >
+      <div className="max-w-6xl mx-auto w-full flex items-center justify-between px-4 md:px-8" style={{ height: 72 }}>
+
         {/* Logo */}
         <a href="#" aria-label="Accueil" style={{ display: "flex", alignItems: "center" }}>
           {!logoError && (
@@ -118,9 +101,7 @@ export default function Navbar() {
                   fontWeight: isActive ? 500 : 400,
                 }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "#FFFFFF")}
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.color = isActive ? "#FFFFFF" : "#D1D5DB")
-                }
+                onMouseLeave={(e) => (e.currentTarget.style.color = isActive ? "#FFFFFF" : "#D1D5DB")}
               >
                 {link.label}
               </a>
@@ -188,7 +169,6 @@ export default function Navbar() {
           borderBottom: "1px solid #2A2A2A",
         }}
       >
-        {/* X close button */}
         <div style={{ display: "flex", justifyContent: "flex-end", padding: "12px 24px 0" }}>
           <button
             onClick={() => setIsMenuOpen(false)}

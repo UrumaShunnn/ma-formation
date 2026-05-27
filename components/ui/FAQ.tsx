@@ -53,46 +53,21 @@ function AccordionItem({
       onMouseLeave={() => setHovered(false)}
       style={{
         background: "#111111",
-        border: `1px solid ${
-          isOpen ? "rgba(124,58,237,0.55)" : hovered ? "rgba(124,58,237,0.4)" : "#2A2A2A"
-        }`,
+        border: `1px solid ${isOpen ? "rgba(124,58,237,0.55)" : hovered ? "rgba(124,58,237,0.4)" : "#2A2A2A"}`,
         borderRadius: 12,
         overflow: "hidden",
         transition: "border-color 250ms ease",
         animation: `fadeInUp 0.4s ease ${index * 60}ms both`,
       }}
     >
-      {/* Question */}
       <button
         onClick={onToggle}
         aria-expanded={isOpen}
-        style={{
-          width: "100%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          gap: 16,
-          padding: "22px 24px",
-          background: "none",
-          border: "none",
-          cursor: "pointer",
-          textAlign: "left",
-        }}
+        style={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16, padding: "22px 24px", background: "none", border: "none", cursor: "pointer", textAlign: "left" }}
       >
-        <span
-          style={{
-            fontFamily: "Syne, sans-serif",
-            fontWeight: 600,
-            fontSize: 16,
-            color: isOpen ? "#FFFFFF" : "#E5E7EB",
-            lineHeight: 1.4,
-            transition: "color 200ms ease",
-          }}
-        >
+        <span style={{ fontFamily: "Syne, sans-serif", fontWeight: 600, fontSize: 16, color: isOpen ? "#FFFFFF" : "#E5E7EB", lineHeight: 1.4, transition: "color 200ms ease" }}>
           {faq.q}
         </span>
-
-        {/* Icône +/× */}
         <div
           style={{
             width: 28,
@@ -109,17 +84,11 @@ function AccordionItem({
           }}
         >
           <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
-            <path
-              d="M6.5 1v11M1 6.5h11"
-              stroke="#8B5CF6"
-              strokeWidth="1.8"
-              strokeLinecap="round"
-            />
+            <path d="M6.5 1v11M1 6.5h11" stroke="#8B5CF6" strokeWidth="1.8" strokeLinecap="round" />
           </svg>
         </div>
       </button>
 
-      {/* Réponse — max-height trick */}
       <div
         ref={bodyRef}
         style={{
@@ -128,16 +97,7 @@ function AccordionItem({
           transition: "max-height 400ms cubic-bezier(0.4, 0, 0.2, 1)",
         }}
       >
-        <p
-          style={{
-            color: "#9CA3AF",
-            fontSize: 15,
-            lineHeight: 1.75,
-            padding: "0 24px 24px",
-            borderTop: "1px solid #1A1A1A",
-            paddingTop: 16,
-          }}
-        >
+        <p style={{ color: "#9CA3AF", fontSize: 15, lineHeight: 1.75, padding: "16px 24px 24px", borderTop: "1px solid #1A1A1A" }}>
           {faq.a}
         </p>
       </div>
@@ -147,55 +107,28 @@ function AccordionItem({
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-
   const toggle = (i: number) => setOpenIndex((prev) => (prev === i ? null : i));
 
   return (
-    <section className="py-16 md:py-24 px-4 md:px-6" style={{ background: "#0A0A0A" }}>
-      <div style={{ maxWidth: 760, margin: "0 auto" }}>
+    <section className="w-full px-4 md:px-8 py-16 md:py-24" style={{ background: "#0A0A0A" }}>
+      <div className="max-w-3xl mx-auto w-full">
 
-        {/* Header */}
-        <div style={{ textAlign: "center", marginBottom: 56 }}>
-          <h2
-            style={{
-              fontFamily: "Syne, sans-serif",
-              fontWeight: 800,
-              fontSize: "clamp(28px, 4vw, 44px)",
-              color: "#FFFFFF",
-              marginBottom: 12,
-              lineHeight: 1.2,
-            }}
-          >
+        <div style={{ textAlign: "center", marginBottom: 48 }}>
+          <h2 className="text-2xl md:text-4xl font-bold mb-4 text-center" style={{ fontFamily: "Syne, sans-serif", color: "#FFFFFF", lineHeight: 1.2 }}>
             Questions{" "}
-            <span
-              style={{
-                background: "linear-gradient(135deg, #8B5CF6 0%, #5B21B6 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
+            <span style={{ background: "linear-gradient(135deg, #8B5CF6 0%, #5B21B6 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
               fréquentes
             </span>
           </h2>
           <p style={{ color: "#6B7280", fontSize: 16 }}>
             Tu n&apos;as pas trouvé ta réponse ?{" "}
-            <span style={{ color: "#8B5CF6", cursor: "pointer" }}>
-              Contacte-nous directement.
-            </span>
+            <span style={{ color: "#8B5CF6", cursor: "pointer" }}>Contacte-nous directement.</span>
           </p>
         </div>
 
-        {/* Accordéon */}
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           {faqs.map((faq, i) => (
-            <AccordionItem
-              key={i}
-              faq={faq}
-              index={i}
-              isOpen={openIndex === i}
-              onToggle={() => toggle(i)}
-            />
+            <AccordionItem key={i} faq={faq} index={i} isOpen={openIndex === i} onToggle={() => toggle(i)} />
           ))}
         </div>
 

@@ -73,15 +73,15 @@ export default function Features() {
   const block4 = useSlideIn("left");
 
   return (
-    <section id="programme-detail" className="py-16 md:py-24 px-4 md:px-8" style={{ background: "#0A0A0A" }}>
-      <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+    <section id="programme-detail" className="w-full px-4 md:px-8 py-16 md:py-24" style={{ background: "#0A0A0A" }}>
+      <div className="max-w-6xl mx-auto w-full">
 
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: 56 }}>
           <span style={{ display: "inline-block", background: "rgba(124,58,237,0.15)", border: "1px solid rgba(124,58,237,0.35)", borderRadius: 100, padding: "6px 16px", fontSize: 13, fontWeight: 600, color: "#8B5CF6", marginBottom: 20, fontFamily: "Syne, sans-serif", letterSpacing: "0.05em" }}>
             Ce que tu vas débloquer
           </span>
-          <h2 className="text-2xl md:text-4xl" style={{ fontFamily: "Syne, sans-serif", fontWeight: 800, color: "#FFFFFF", lineHeight: 1.2, maxWidth: 700, margin: "0 auto 16px" }}>
+          <h2 className="text-2xl md:text-4xl font-bold mb-4 text-center" style={{ fontFamily: "Syne, sans-serif", color: "#FFFFFF", lineHeight: 1.2 }}>
             Tout ce dont tu as besoin pour réussir,{" "}
             <span style={{ background: "linear-gradient(135deg, #8B5CF6 0%, #5B21B6 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
               réuni au même endroit.
@@ -96,7 +96,7 @@ export default function Features() {
 
           {/* Bloc 1 */}
           <div className="p-6 md:p-12" style={{ background: "#111111", borderRadius: 16, border: "1px solid #2A2A2A" }}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
               <div ref={block1Text.ref} style={block1Text.style}>
                 <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 12, marginBottom: 16 }}>
                   <h3 style={{ fontFamily: "Syne, sans-serif", fontWeight: 700, fontSize: 22, color: "#FFFFFF" }}>Une formation ultra-complète</h3>
@@ -116,7 +116,7 @@ export default function Features() {
 
           {/* Bloc 2 */}
           <div className="p-6 md:p-12" style={{ background: "#111111", borderRadius: 16, border: "1px solid #2A2A2A" }}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
               <div ref={block2Img.ref} style={block2Img.style} className="order-2 md:order-1"><ImagePlaceholder label="Screenshot communauté" /></div>
               <div ref={block2Text.ref} style={block2Text.style} className="order-1 md:order-2">
                 <h3 style={{ fontFamily: "Syne, sans-serif", fontWeight: 700, fontSize: 22, color: "#FFFFFF", marginBottom: 20 }}>Accompagnement & Communauté</h3>
@@ -132,7 +132,7 @@ export default function Features() {
 
           {/* Bloc 3 */}
           <div className="p-6 md:p-12" style={{ background: "#111111", borderRadius: 16, border: "1px solid #2A2A2A" }}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
               <div ref={block3Text.ref} style={block3Text.style}>
                 <h3 style={{ fontFamily: "Syne, sans-serif", fontWeight: 700, fontSize: 22, color: "#FFFFFF", marginBottom: 20 }}>Méthodes Exclusives & Testées</h3>
                 <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 12 }}>
@@ -146,10 +146,10 @@ export default function Features() {
             </div>
           </div>
 
-          {/* Bloc 4 */}
+          {/* Bloc 4 — Bonus */}
           <div ref={block4.ref} className="p-6 md:p-12" style={{ ...block4.style, background: "#111111", borderRadius: 16, border: "1px solid #2A2A2A" }}>
             <h3 style={{ fontFamily: "Syne, sans-serif", fontWeight: 700, fontSize: 22, color: "#FFFFFF", marginBottom: 28, textAlign: "center" }}>Bonus réservés aux membres</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {bonusCards.map((card, i) => <BonusCard key={i} card={card} />)}
             </div>
           </div>

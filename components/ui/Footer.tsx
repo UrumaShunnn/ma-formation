@@ -17,8 +17,6 @@ const legalLinks = [
   { label: "Mentions légales", href: "#" },
 ];
 
-/* ─── Icônes SVG réseaux sociaux ─────────────────────── */
-
 function InstagramIcon() {
   return (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
@@ -32,13 +30,7 @@ function InstagramIcon() {
 function TikTokIcon() {
   return (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-      <path
-        d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+      <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -58,12 +50,9 @@ const socials = [
   { label: "YouTube", href: "#", Icon: YouTubeIcon },
 ];
 
-/* ─── Sous-composants ─────────────────────────────────── */
-
 function SocialButton({ social }: { social: (typeof socials)[number] }) {
   const [hovered, setHovered] = useState(false);
   const { Icon, label, href } = social;
-
   return (
     <a
       href={href}
@@ -100,39 +89,28 @@ function FooterLink({ href, children }: { href: string; children: React.ReactNod
       href={href}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      style={{
-        color: hovered ? "#D1D5DB" : "#6B7280",
-        fontSize: 14,
-        textDecoration: "none",
-        transition: "color 200ms ease",
-        lineHeight: 1,
-      }}
+      style={{ color: hovered ? "#D1D5DB" : "#6B7280", fontSize: 14, textDecoration: "none", transition: "color 200ms ease", lineHeight: 1 }}
     >
       {children}
     </a>
   );
 }
 
-/* ─── Composant principal ─────────────────────────────── */
-
 export default function Footer() {
   const [logoError, setLogoError] = useState(false);
 
   return (
     <footer
-      className="px-4 md:px-6 pt-12 md:pt-16 pb-8"
-      style={{
-        background: "#0A0A0A",
-        borderTop: "1px solid #1A1A1A",
-      }}
+      className="w-full px-4 md:px-8 pt-12 md:pt-16 pb-8"
+      style={{ background: "#0A0A0A", borderTop: "1px solid #1A1A1A" }}
     >
-      <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+      <div className="max-w-6xl mx-auto w-full">
 
-        {/* Section haute — 3 colonnes */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+        {/* 3 colonnes */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+
           {/* Colonne 1 : Logo + description + socials */}
           <div className="flex flex-col gap-4 items-center md:items-start text-center md:text-left">
-            {/* Logo / nom */}
             <div>
               {!logoError && (
                 <Image
@@ -159,74 +137,37 @@ export default function Footer() {
                 MaFormation
               </span>
             </div>
-
-            <p style={{ color: "#6B7280", fontSize: 14, lineHeight: 1.7, maxWidth: 260 }}>
-              L&apos;accélérateur e-commerce qui t&apos;emmène du zéro
-              à tes premiers chiffres d&apos;affaires en 90 jours.
+            <p style={{ color: "#6B7280", fontSize: 14, lineHeight: 1.7 }}>
+              L&apos;accélérateur e-commerce qui t&apos;emmène du zéro à tes premiers chiffres d&apos;affaires en 90 jours.
             </p>
-
-            {/* Réseaux sociaux */}
-            <div className="flex justify-center md:justify-start gap-3" style={{ marginTop: 4 }}>
-              {socials.map((s) => (
-                <SocialButton key={s.label} social={s} />
-              ))}
+            <div className="flex justify-center md:justify-start gap-3">
+              {socials.map((s) => <SocialButton key={s.label} social={s} />)}
             </div>
           </div>
 
           {/* Colonne 2 : Navigation */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <p
-              style={{
-                fontFamily: "Syne, sans-serif",
-                fontWeight: 700,
-                fontSize: 13,
-                color: "#FFFFFF",
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                marginBottom: 20,
-              }}
-            >
+            <p style={{ fontFamily: "Syne, sans-serif", fontWeight: 700, fontSize: 13, color: "#FFFFFF", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 20 }}>
               Navigation
             </p>
             <nav style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               {navLinks.map((link) => (
-                <FooterLink key={link.href} href={link.href}>
-                  {link.label}
-                </FooterLink>
+                <FooterLink key={link.href} href={link.href}>{link.label}</FooterLink>
               ))}
             </nav>
           </div>
 
           {/* Colonne 3 : Contact */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <p
-              style={{
-                fontFamily: "Syne, sans-serif",
-                fontWeight: 700,
-                fontSize: 13,
-                color: "#FFFFFF",
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                marginBottom: 20,
-              }}
-            >
+            <p style={{ fontFamily: "Syne, sans-serif", fontWeight: 700, fontSize: 13, color: "#FFFFFF", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 20 }}>
               Contact
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-              {/* WhatsApp */}
               <a
                 href="https://wa.me/33600000000"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 8,
-                  color: "#6B7280",
-                  fontSize: 14,
-                  textDecoration: "none",
-                  transition: "color 200ms ease",
-                }}
+                style={{ display: "inline-flex", alignItems: "center", gap: 8, color: "#6B7280", fontSize: 14, textDecoration: "none", transition: "color 200ms ease" }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "#D1D5DB")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = "#6B7280")}
               >
@@ -236,19 +177,9 @@ export default function Footer() {
                 </svg>
                 WhatsApp
               </a>
-
-              {/* Email */}
               <a
                 href="mailto:contact@maformation.fr"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 8,
-                  color: "#6B7280",
-                  fontSize: 14,
-                  textDecoration: "none",
-                  transition: "color 200ms ease",
-                }}
+                style={{ display: "inline-flex", alignItems: "center", gap: 8, color: "#6B7280", fontSize: 14, textDecoration: "none", transition: "color 200ms ease" }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "#D1D5DB")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = "#6B7280")}
               >
@@ -267,17 +198,12 @@ export default function Footer() {
           className="flex flex-col md:flex-row flex-wrap items-center justify-center md:justify-between gap-4 text-center md:text-left"
           style={{ borderTop: "1px solid #1A1A1A", paddingTop: 24 }}
         >
-          <p style={{ color: "#4B5563", fontSize: 13 }}>
-            © 2025 Ton Nom. Tous droits réservés.
-          </p>
-
-          <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 8 }}>
+          <p style={{ color: "#4B5563", fontSize: 13 }}>© 2025 Ton Nom. Tous droits réservés.</p>
+          <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "center", gap: 8 }}>
             {legalLinks.map((link, i) => (
               <span key={link.href} style={{ display: "flex", alignItems: "center", gap: 8 }}>
                 <FooterLink href={link.href}>{link.label}</FooterLink>
-                {i < legalLinks.length - 1 && (
-                  <span style={{ color: "#2A2A2A", fontSize: 12 }}>|</span>
-                )}
+                {i < legalLinks.length - 1 && <span style={{ color: "#2A2A2A", fontSize: 12 }}>|</span>}
               </span>
             ))}
           </div>

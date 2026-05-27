@@ -96,9 +96,11 @@ export default function Testimonials() {
 
   return (
     <>
-      <section id="temoignages" className="py-16 md:py-24" style={{ background: "#0A0A0A" }}>
-        <div className="text-center px-4 md:px-6" style={{ marginBottom: 48 }}>
-          <h2 className="text-2xl md:text-4xl" style={{ fontFamily: "Syne, sans-serif", fontWeight: 800, color: "#FFFFFF", marginBottom: 12, lineHeight: 1.2 }}>
+      <section id="temoignages" className="w-full px-4 md:px-8 py-16 md:py-24" style={{ background: "#0A0A0A" }}>
+
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-2xl md:text-4xl font-bold mb-4 text-center" style={{ fontFamily: "Syne, sans-serif", color: "#FFFFFF", lineHeight: 1.2 }}>
             Ils ont rejoint...{" "}
             <span style={{ background: "linear-gradient(135deg,#8B5CF6,#5B21B6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
               voici ce qui a changé
@@ -108,14 +110,14 @@ export default function Testimonials() {
         </div>
 
         {/* Screenshots */}
-        <div style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: 64 }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: 64, overflow: "hidden" }}>
           <MarqueeRow items={screenshotRows[0]} direction="left" />
           <MarqueeRow items={screenshotRows[1]} direction="right" />
         </div>
 
         {/* Vidéos témoignages */}
-        <div className="px-4 md:px-6" style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="max-w-6xl mx-auto w-full">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {testimonials.map((t) => <TestimonialCard key={t.id} t={t} onPlay={openLightbox} />)}
           </div>
         </div>

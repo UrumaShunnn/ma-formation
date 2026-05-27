@@ -39,20 +39,20 @@ export default function Program() {
   const [ctaHovered, setCtaHovered] = useState(false);
 
   return (
-    <section id="programme" className="py-16 md:py-24 px-4 md:px-6" style={{ background: "#0A0A0A" }}>
-      <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+    <section id="programme" className="w-full px-4 md:px-8 py-16 md:py-24" style={{ background: "#0A0A0A" }}>
+      <div className="max-w-6xl mx-auto w-full">
 
         <div style={{ textAlign: "center", marginBottom: 48 }}>
           <span style={{ display: "inline-block", background: "rgba(124,58,237,0.15)", border: "1px solid rgba(124,58,237,0.35)", borderRadius: 100, padding: "6px 16px", fontSize: 13, fontWeight: 600, color: "#8B5CF6", marginBottom: 20, fontFamily: "Syne, sans-serif", letterSpacing: "0.05em" }}>
             Le programme complet
           </span>
-          <h2 className="text-2xl md:text-4xl" style={{ fontFamily: "Syne, sans-serif", fontWeight: 800, color: "#FFFFFF", lineHeight: 1.2, maxWidth: 640, margin: "0 auto" }}>
+          <h2 className="text-2xl md:text-4xl font-bold mb-4 text-center" style={{ fontFamily: "Syne, sans-serif", color: "#FFFFFF", lineHeight: 1.2 }}>
             12 modules pour maîtriser le e-commerce{" "}
             <span style={{ background: "linear-gradient(135deg,#8B5CF6,#5B21B6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>de A à Z</span>
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
           {modules.map((mod, i) => <ModuleCard key={mod.n} mod={mod} index={i} />)}
         </div>
 
