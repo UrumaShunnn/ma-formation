@@ -162,9 +162,9 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       <div
-        className={isMenuOpen ? "block md:hidden" : "hidden"}
+        className={isMenuOpen ? "block md:hidden z-50" : "hidden"}
         style={{
-          background: "#111111",
+          background: "#0A0A0A",
           borderTop: "1px solid #7C3AED",
           borderBottom: "1px solid #2A2A2A",
         }}

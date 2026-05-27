@@ -46,7 +46,7 @@ export default function Hero() {
 
         {/* H1 */}
         <h1
-          className="text-3xl sm:text-4xl md:text-6xl font-black leading-tight mb-6 w-full"
+          className="text-3xl md:text-5xl lg:text-6xl font-black leading-tight w-full text-center"
           style={{ fontFamily: "Syne, sans-serif", letterSpacing: "-0.02em", animation: "fadeInUp 0.6s ease 100ms both" }}
         >
           <span style={{ color: "#FFFFFF", display: "block" }}>Lance et scale ta boutique</span>
@@ -56,7 +56,7 @@ export default function Hero() {
         </h1>
 
         {/* Sous-titre */}
-        <p className="text-base md:text-xl" style={{ color: "#9CA3AF", lineHeight: 1.7, maxWidth: 600, animation: "fadeInUp 0.6s ease 200ms both" }}>
+        <p className="text-base md:text-xl text-center" style={{ color: "#9CA3AF", lineHeight: 1.7, maxWidth: 600, animation: "fadeInUp 0.6s ease 200ms both" }}>
           L&apos;accélérateur le plus complet pour réussir dans le e-commerce —
           méthodes testées, communauté active, résultats prouvés.
         </p>
