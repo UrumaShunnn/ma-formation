@@ -14,8 +14,8 @@ const navLinks = [
 const TYPEFORM_URL = "https://form.typeform.com/to/XXXXXXXX";
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const [logoError, setLogoError] = useState(false);
 
@@ -41,50 +41,47 @@ export default function Navbar() {
     return () => observers.forEach((obs) => obs.disconnect());
   }, []);
 
+  const close = () => setIsOpen(false);
+
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 w-full"
+      className="fixed top-0 left-0 right-0 w-full z-50"
       style={{
-        transition: "background 300ms ease, border-color 300ms ease, backdrop-filter 300ms ease",
-        background: scrolled ? "rgba(10,10,10,0.95)" : "transparent",
-        backdropFilter: scrolled ? "blur(12px)" : "none",
-        WebkitBackdropFilter: scrolled ? "blur(12px)" : "none",
+        height: 60,
+        transition: "background 300ms ease, border-color 300ms ease",
+        background: scrolled ? "rgba(10,10,10,0.97)" : "rgba(10,10,10,0.85)",
+        backdropFilter: "blur(12px)",
+        WebkitBackdropFilter: "blur(12px)",
         borderBottom: scrolled ? "1px solid #2A2A2A" : "1px solid transparent",
       }}
     >
-      <div className="max-w-6xl mx-auto w-full flex items-center justify-between px-4 md:px-8" style={{ height: 72 }}>
-
+      {/* Main bar */}
+      <div
+        className="max-w-6xl mx-auto w-full flex items-center justify-between px-4 md:px-8"
+        style={{ height: 60 }}
+      >
         {/* Logo */}
-        <a href="#" aria-label="Accueil" style={{ display: "flex", alignItems: "center" }}>
+        <a href="#" aria-label="Accueil" style={{ display: "flex", alignItems: "center", flexShrink: 0 }}>
           {!logoError && (
             <Image
               src="/logo.svg"
               alt="Ma Formation E-Commerce"
-              width={160}
-              height={40}
+              width={140}
+              height={36}
               priority
               onError={() => setLogoError(true)}
-              style={{ height: 40, width: "auto" }}
+              style={{ height: 36, width: "auto" }}
             />
           )}
-          <span
-            style={{
-              display: logoError ? "block" : "none",
-              fontFamily: "Syne, sans-serif",
-              fontWeight: 700,
-              fontSize: 20,
-              background: "linear-gradient(135deg, #8B5CF6 0%, #5B21B6 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}
-          >
-            MaFormation
-          </span>
+          {logoError && (
+            <span style={{ fontFamily: "Syne, sans-serif", fontWeight: 700, fontSize: 18, background: "linear-gradient(135deg, #8B5CF6 0%, #5B21B6 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+              MaFormation
+            </span>
+          )}
         </a>
 
-        {/* Nav desktop */}
-        <nav className="hidden md:flex" style={{ alignItems: "center", gap: 32 }}>
+        {/* Desktop nav links — hidden on mobile */}
+        <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => {
             const isActive = activeSection === link.href.replace("#", "");
             return (
@@ -97,8 +94,9 @@ export default function Navbar() {
                   textDecoration: isActive ? "underline" : "none",
                   textDecorationColor: "#7C3AED",
                   textUnderlineOffset: 4,
+                  fontWeight: isActive ? 600 : 400,
                   transition: "color 200ms ease",
-                  fontWeight: isActive ? 500 : 400,
+                  whiteSpace: "nowrap",
                 }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "#FFFFFF")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = isActive ? "#FFFFFF" : "#D1D5DB")}
@@ -109,7 +107,7 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* CTA desktop */}
+        {/* Desktop CTA — hidden on mobile */}
         <a
           href={TYPEFORM_URL}
           target="_blank"
@@ -119,12 +117,12 @@ export default function Navbar() {
             background: "linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%)",
             color: "#FFFFFF",
             borderRadius: 8,
-            padding: "10px 20px",
+            padding: "9px 18px",
             fontSize: 14,
             fontWeight: 600,
             textDecoration: "none",
-            transition: "filter 200ms ease, transform 200ms ease",
             whiteSpace: "nowrap",
+            transition: "filter 200ms ease, transform 200ms ease",
           }}
           onMouseEnter={(e) => {
             (e.currentTarget as HTMLElement).style.filter = "brightness(1.15)";
@@ -138,72 +136,90 @@ export default function Navbar() {
           Candidater →
         </a>
 
-        {/* Hamburger mobile */}
+        {/* Hamburger — visible on mobile only, on the RIGHT */}
         <button
           className="md:hidden"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
-          aria-expanded={isMenuOpen}
+          onClick={() => setIsOpen((o) => !o)}
+          aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
+          aria-expanded={isOpen}
           style={{
             background: "none",
             border: "none",
             cursor: "pointer",
-            padding: 8,
+            color: "#FFFFFF",
+            fontSize: 24,
+            lineHeight: 1,
+            padding: "4px 8px",
             display: "flex",
-            flexDirection: "column",
-            gap: 5,
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
-          <span style={{ display: "block", width: 24, height: 2, background: "#FFFFFF", borderRadius: 2, transition: "transform 300ms ease, opacity 300ms ease", transform: isMenuOpen ? "translateY(7px) rotate(45deg)" : "none" }} />
-          <span style={{ display: "block", width: 24, height: 2, background: "#FFFFFF", borderRadius: 2, transition: "opacity 300ms ease", opacity: isMenuOpen ? 0 : 1 }} />
-          <span style={{ display: "block", width: 24, height: 2, background: "#FFFFFF", borderRadius: 2, transition: "transform 300ms ease, opacity 300ms ease", transform: isMenuOpen ? "translateY(-7px) rotate(-45deg)" : "none" }} />
+          {isOpen ? "✕" : "☰"}
         </button>
       </div>
 
-      {/* Mobile menu — fixed full-screen overlay below navbar */}
-      <div className={`fixed inset-0 top-[72px] z-40 bg-[#0A0A0A] flex-col p-6 gap-4 md:hidden overflow-y-auto ${isMenuOpen ? "flex" : "hidden"}`}>
-        {navLinks.map((link) => {
-          const isActive = activeSection === link.href.replace("#", "");
-          return (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setIsMenuOpen(false)}
-              style={{
-                fontSize: 18,
-                color: isActive ? "#8B5CF6" : "#D1D5DB",
-                fontWeight: isActive ? 600 : 400,
-                padding: "14px 0",
-                textDecoration: "none",
-                borderBottom: "1px solid #1A1A1A",
-                transition: "color 200ms ease",
-              }}
-            >
-              {link.label}
-            </a>
-          );
-        })}
-        <a
-          href={TYPEFORM_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={() => setIsMenuOpen(false)}
+      {/* Mobile dropdown — absolute below navbar, not fullscreen */}
+      {isOpen && (
+        <div
+          className="md:hidden"
           style={{
-            marginTop: 16,
-            background: "linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%)",
-            color: "#FFFFFF",
-            borderRadius: 10,
-            padding: "14px 20px",
-            fontSize: 16,
-            fontWeight: 700,
-            textDecoration: "none",
-            textAlign: "center",
-            display: "block",
+            position: "absolute",
+            top: 60,
+            left: 0,
+            right: 0,
+            width: "100%",
+            background: "#111111",
+            borderBottom: "1px solid #7C3AED",
+            padding: 16,
+            zIndex: 999,
           }}
         >
-          Candidater →
-        </a>
-      </div>
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.href.replace("#", "");
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={close}
+                style={{
+                  display: "block",
+                  padding: "14px 16px",
+                  borderBottom: "1px solid #2A2A2A",
+                  color: isActive ? "#8B5CF6" : "#FFFFFF",
+                  fontWeight: isActive ? 600 : 400,
+                  fontSize: 18,
+                  textDecoration: "none",
+                  transition: "color 200ms ease",
+                }}
+              >
+                {link.label}
+              </a>
+            );
+          })}
+
+          <a
+            href={TYPEFORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={close}
+            style={{
+              display: "block",
+              marginTop: 16,
+              background: "linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%)",
+              color: "#FFFFFF",
+              borderRadius: 10,
+              padding: "14px 20px",
+              fontSize: 16,
+              fontWeight: 700,
+              textDecoration: "none",
+              textAlign: "center",
+            }}
+          >
+            Candidater →
+          </a>
+        </div>
+      )}
     </header>
   );
 }
