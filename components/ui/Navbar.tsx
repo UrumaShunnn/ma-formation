@@ -166,7 +166,7 @@ export default function Navbar() {
 
         {/* Hamburger mobile */}
         <button
-          onClick={() => setMobileOpen((o) => !o)}
+          onClick={() => setMobileOpen(mobileOpen ? false : true)}
           aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
           aria-expanded={mobileOpen}
           className="md:hidden"
@@ -235,7 +235,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                onClick={handleLinkClick}
+                onClick={() => setMobileOpen(false)}
                 style={{
                   fontSize: 15,
                   color: isActive ? "#8B5CF6" : "#D1D5DB",
@@ -254,7 +254,7 @@ export default function Navbar() {
             href={TYPEFORM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={handleLinkClick}
+            onClick={() => setMobileOpen(false)}
             style={{
               marginTop: 12,
               background: "linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%)",
