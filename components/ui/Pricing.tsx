@@ -73,7 +73,8 @@ export default function Pricing() {
   return (
     <section
       id="rejoindre"
-      style={{ background: "#0A0A0A", padding: "100px 24px", position: "relative", overflow: "hidden" }}
+      className="py-16 md:py-24 px-4 md:px-6"
+      style={{ background: "#0A0A0A", position: "relative", overflow: "hidden" }}
     >
       {/* Glow de fond centré */}
       <div
@@ -146,13 +147,13 @@ export default function Pricing() {
         {/* Carte pricing */}
         <div
           ref={ref}
+          className="p-6 md:p-12"
           style={{
             maxWidth: 600,
             margin: "0 auto",
             background: "linear-gradient(135deg, #111111 0%, #1A0A2E 100%)",
             border: "2px solid #7C3AED",
             borderRadius: 24,
-            padding: "48px",
             boxShadow: "0 0 80px rgba(124,58,237,0.25)",
             opacity: visible ? 1 : 0,
             transform: visible ? "translateY(0) scale(1)" : "translateY(40px) scale(0.97)",

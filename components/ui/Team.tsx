@@ -126,17 +126,12 @@ function MemberCard({ member }: { member: (typeof team)[number] }) {
       }}
     >
       {/* Photo + identité */}
-      <div
-        style={{
-          display: "flex",
-          gap: 32,
-          alignItems: "flex-start",
-          flexWrap: "wrap",
-        }}
-      >
-        <Avatar photo={member.photo} initials={member.initials} />
+      <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
+        <div className="self-center md:self-start flex-shrink-0">
+          <Avatar photo={member.photo} initials={member.initials} />
+        </div>
 
-        <div style={{ flex: 1, minWidth: 200 }}>
+        <div style={{ flex: 1, minWidth: 0 }} className="w-full">
           {/* Badge rôle */}
           <span
             style={{
@@ -273,7 +268,8 @@ export default function Team() {
   return (
     <section
       id="equipe"
-      style={{ background: "#0A0A0A", padding: "100px 24px" }}
+      className="py-16 md:py-24 px-4 md:px-6"
+      style={{ background: "#0A0A0A" }}
     >
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
 

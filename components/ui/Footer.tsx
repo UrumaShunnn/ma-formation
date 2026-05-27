@@ -120,25 +120,18 @@ export default function Footer() {
 
   return (
     <footer
+      className="px-4 md:px-6 pt-12 md:pt-16 pb-8"
       style={{
         background: "#0A0A0A",
         borderTop: "1px solid #1A1A1A",
-        padding: "60px 24px 30px",
       }}
     >
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
 
         {/* Section haute — 3 colonnes */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-            gap: "48px 40px",
-            marginBottom: 48,
-          }}
-        >
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
           {/* Colonne 1 : Logo + description + socials */}
-          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+          <div className="flex flex-col gap-4 items-center md:items-start text-center md:text-left">
             {/* Logo / nom */}
             <div>
               {!logoError && (
@@ -173,7 +166,7 @@ export default function Footer() {
             </p>
 
             {/* Réseaux sociaux */}
-            <div style={{ display: "flex", gap: 10, marginTop: 4 }}>
+            <div className="flex justify-center md:justify-start gap-3" style={{ marginTop: 4 }}>
               {socials.map((s) => (
                 <SocialButton key={s.label} social={s} />
               ))}
@@ -181,7 +174,7 @@ export default function Footer() {
           </div>
 
           {/* Colonne 2 : Navigation */}
-          <div>
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <p
               style={{
                 fontFamily: "Syne, sans-serif",
@@ -205,7 +198,7 @@ export default function Footer() {
           </div>
 
           {/* Colonne 3 : Contact */}
-          <div>
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <p
               style={{
                 fontFamily: "Syne, sans-serif",
@@ -271,15 +264,8 @@ export default function Footer() {
 
         {/* Section bas */}
         <div
-          style={{
-            borderTop: "1px solid #1A1A1A",
-            paddingTop: 24,
-            display: "flex",
-            flexWrap: "wrap",
-            alignItems: "center",
-            justifyContent: "space-between",
-            gap: 16,
-          }}
+          className="flex flex-col md:flex-row flex-wrap items-center justify-center md:justify-between gap-4 text-center md:text-left"
+          style={{ borderTop: "1px solid #1A1A1A", paddingTop: 24 }}
         >
           <p style={{ color: "#4B5563", fontSize: 13 }}>
             © 2025 Ton Nom. Tous droits réservés.

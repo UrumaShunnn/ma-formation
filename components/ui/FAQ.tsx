@@ -151,7 +151,7 @@ export default function FAQ() {
   const toggle = (i: number) => setOpenIndex((prev) => (prev === i ? null : i));
 
   return (
-    <section style={{ background: "#0A0A0A", padding: "100px 24px" }}>
+    <section className="py-16 md:py-24 px-4 md:px-6" style={{ background: "#0A0A0A" }}>
       <div style={{ maxWidth: 760, margin: "0 auto" }}>
 
         {/* Header */}
