@@ -15,7 +15,7 @@ const TYPEFORM_URL = "https://form.typeform.com/to/XXXXXXXX";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const [logoError, setLogoError] = useState(false);
 
@@ -45,8 +45,6 @@ export default function Navbar() {
     return () => observers.forEach((obs) => obs.disconnect());
   }, []);
 
-  const handleLinkClick = () => setMobileOpen(false);
-
   return (
     <header
       style={{
@@ -67,12 +65,11 @@ export default function Navbar() {
           maxWidth: 1280,
           margin: "0 auto",
           padding: "0 24px",
-          height: 72,
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
+          height: 72,
         }}
-        className="h-[72px] md:h-[72px] min-[0px]:h-[60px]"
       >
         {/* Logo */}
         <a href="#" aria-label="Accueil" style={{ display: "flex", alignItems: "center" }}>
@@ -104,10 +101,7 @@ export default function Navbar() {
         </a>
 
         {/* Nav desktop */}
-        <nav
-          style={{ display: "flex", alignItems: "center", gap: 32 }}
-          className="hidden md:flex"
-        >
+        <nav className="hidden md:flex" style={{ alignItems: "center", gap: 32 }}>
           {navLinks.map((link) => {
             const isActive = activeSection === link.href.replace("#", "");
             return (
@@ -139,6 +133,7 @@ export default function Navbar() {
           href={TYPEFORM_URL}
           target="_blank"
           rel="noopener noreferrer"
+          className="hidden md:inline-block"
           style={{
             background: "linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%)",
             color: "#FFFFFF",
@@ -148,10 +143,8 @@ export default function Navbar() {
             fontWeight: 600,
             textDecoration: "none",
             transition: "filter 200ms ease, transform 200ms ease",
-            display: "inline-block",
             whiteSpace: "nowrap",
           }}
-          className="hidden md:inline-block"
           onMouseEnter={(e) => {
             (e.currentTarget as HTMLElement).style.filter = "brightness(1.15)";
             (e.currentTarget as HTMLElement).style.transform = "scale(1.02)";
@@ -166,10 +159,10 @@ export default function Navbar() {
 
         {/* Hamburger mobile */}
         <button
-          onClick={() => setMobileOpen(mobileOpen ? false : true)}
-          aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
-          aria-expanded={mobileOpen}
           className="md:hidden"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+          aria-expanded={isMenuOpen}
           style={{
             background: "none",
             border: "none",
@@ -180,62 +173,61 @@ export default function Navbar() {
             gap: 5,
           }}
         >
-          <span
-            style={{
-              display: "block",
-              width: 24,
-              height: 2,
-              background: "#FFFFFF",
-              borderRadius: 2,
-              transition: "transform 300ms ease, opacity 300ms ease",
-              transform: mobileOpen ? "translateY(7px) rotate(45deg)" : "none",
-            }}
-          />
-          <span
-            style={{
-              display: "block",
-              width: 24,
-              height: 2,
-              background: "#FFFFFF",
-              borderRadius: 2,
-              transition: "opacity 300ms ease",
-              opacity: mobileOpen ? 0 : 1,
-            }}
-          />
-          <span
-            style={{
-              display: "block",
-              width: 24,
-              height: 2,
-              background: "#FFFFFF",
-              borderRadius: 2,
-              transition: "transform 300ms ease, opacity 300ms ease",
-              transform: mobileOpen ? "translateY(-7px) rotate(-45deg)" : "none",
-            }}
-          />
+          <span style={{ display: "block", width: 24, height: 2, background: "#FFFFFF", borderRadius: 2, transition: "transform 300ms ease, opacity 300ms ease", transform: isMenuOpen ? "translateY(7px) rotate(45deg)" : "none" }} />
+          <span style={{ display: "block", width: 24, height: 2, background: "#FFFFFF", borderRadius: 2, transition: "opacity 300ms ease", opacity: isMenuOpen ? 0 : 1 }} />
+          <span style={{ display: "block", width: 24, height: 2, background: "#FFFFFF", borderRadius: 2, transition: "transform 300ms ease, opacity 300ms ease", transform: isMenuOpen ? "translateY(-7px) rotate(-45deg)" : "none" }} />
         </button>
       </div>
 
-      {/* Menu mobile dropdown */}
+      {/* Mobile menu */}
       <div
-        className="md:hidden"
+        className={isMenuOpen ? "block md:hidden" : "hidden"}
         style={{
-          overflow: "hidden",
-          maxHeight: mobileOpen ? 400 : 0,
-          transition: "max-height 300ms ease",
           background: "#111111",
-          borderTop: mobileOpen ? "1px solid #7C3AED" : "1px solid transparent",
-          borderBottom: mobileOpen ? "1px solid #2A2A2A" : "1px solid transparent",
+          borderTop: "1px solid #7C3AED",
+          borderBottom: "1px solid #2A2A2A",
         }}
       >
-        <nav style={{ padding: "16px 24px", display: "flex", flexDirection: "column", gap: 4 }}>
+        {/* X close button */}
+        <div style={{ display: "flex", justifyContent: "flex-end", padding: "12px 24px 0" }}>
+          <button
+            onClick={() => setIsMenuOpen(false)}
+            aria-label="Fermer le menu"
+            style={{
+              background: "none",
+              border: "1px solid #2A2A2A",
+              borderRadius: "50%",
+              width: 32,
+              height: 32,
+              color: "#9CA3AF",
+              fontSize: 16,
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              transition: "border-color 200ms ease, color 200ms ease",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.borderColor = "#7C3AED";
+              (e.currentTarget as HTMLElement).style.color = "#FFFFFF";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.borderColor = "#2A2A2A";
+              (e.currentTarget as HTMLElement).style.color = "#9CA3AF";
+            }}
+          >
+            ✕
+          </button>
+        </div>
+
+        <nav style={{ padding: "12px 24px 20px", display: "flex", flexDirection: "column", gap: 4 }}>
           {navLinks.map((link) => {
             const isActive = activeSection === link.href.replace("#", "");
             return (
               <a
                 key={link.href}
                 href={link.href}
-                onClick={() => setMobileOpen(false)}
+                onClick={() => setIsMenuOpen(false)}
                 style={{
                   fontSize: 15,
                   color: isActive ? "#8B5CF6" : "#D1D5DB",
@@ -254,7 +246,7 @@ export default function Navbar() {
             href={TYPEFORM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => setMobileOpen(false)}
+            onClick={() => setIsMenuOpen(false)}
             style={{
               marginTop: 12,
               background: "linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%)",
