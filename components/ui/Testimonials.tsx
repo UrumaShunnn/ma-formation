@@ -116,7 +116,7 @@ export default function Testimonials() {
         </div>
 
         {/* Vidéos témoignages */}
-        <div className="max-w-6xl mx-auto w-full">
+        <div className="max-w-6xl mx-auto w-full px-4 md:px-0">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {testimonials.map((t) => <TestimonialCard key={t.id} t={t} onPlay={openLightbox} />)}
           </div>

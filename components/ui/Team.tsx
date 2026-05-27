@@ -126,7 +126,7 @@ function MemberCard({ member }: { member: (typeof team)[number] }) {
 export default function Team() {
   return (
     <section id="equipe" className="w-full px-4 md:px-8 py-16 md:py-24" style={{ background: "#0A0A0A" }}>
-      <div className="max-w-6xl mx-auto w-full">
+      <div className="max-w-6xl mx-auto w-full px-4 md:px-0">
 
         <div style={{ textAlign: "center", marginBottom: 48 }}>
           <h2 className="text-2xl md:text-4xl font-bold mb-4 text-center" style={{ fontFamily: "Syne, sans-serif", color: "#FFFFFF", lineHeight: 1.2 }}>

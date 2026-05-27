@@ -98,7 +98,7 @@ export default function Stats() {
 
       {/* Compteurs */}
       <section className="w-full px-4 md:px-8 py-16 md:py-24" style={{ background: "#0A0A0A" }}>
-        <div className="max-w-6xl mx-auto w-full">
+        <div className="max-w-6xl mx-auto w-full px-4 md:px-0">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {stats.map((stat, i) => <StatCard key={i} stat={stat} delay={i * 120} />)}
           </div>

@@ -34,7 +34,7 @@ export default function Hero() {
       {/* Glow bottom-left */}
       <div aria-hidden="true" style={{ position: "absolute", bottom: -50, left: -100, width: 400, height: 400, borderRadius: "50%", background: "#5B21B6", opacity: 0.1, filter: "blur(160px)", pointerEvents: "none", zIndex: 0 }} />
 
-      <div className="relative z-10 w-full max-w-6xl mx-auto flex flex-col items-center gap-8">
+      <div className="relative z-10 w-full max-w-6xl mx-auto flex flex-col items-center gap-8 px-4 md:px-0">
 
         {/* Badge */}
         <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#1A1A1A", border: "1px solid rgba(124,58,237,0.4)", borderRadius: 100, padding: "6px 16px", animation: "pulse 2.5s ease-in-out infinite" }}>
@@ -63,7 +63,7 @@ export default function Hero() {
 
         {/* Vidéo */}
         <div
-          className="w-full max-w-3xl mx-auto aspect-video rounded-2xl overflow-hidden"
+          className="w-full max-w-3xl mx-auto aspect-video rounded-2xl overflow-hidden mx-2 md:mx-0"
           style={{ position: "relative", border: "1px solid rgba(124,58,237,0.3)", boxShadow: "0 0 60px rgba(124,58,237,0.2)", animation: "fadeInUp 0.6s ease 300ms both" }}
         >
           {YOUTUBE_VIDEO_ID ? (
@@ -89,7 +89,7 @@ export default function Hero() {
         </div>
 
         {/* CTA + social proof */}
-        <div className="w-full flex flex-col items-center gap-5" style={{ animation: "fadeInUp 0.6s ease 400ms both" }}>
+        <div className="w-full flex flex-col items-center gap-5 px-2 md:px-0" style={{ animation: "fadeInUp 0.6s ease 400ms both" }}>
           <a
             href={TYPEFORM_URL}
             target="_blank"
@@ -121,7 +121,7 @@ export default function Hero() {
         </div>
 
         {/* Checklist */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full" style={{ animation: "fadeInUp 0.6s ease 500ms both" }}>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full px-2 md:px-0" style={{ animation: "fadeInUp 0.6s ease 500ms both" }}>
           {checklist.map((item, i) => (
             <div key={i} className="flex items-center gap-2 justify-center">
               <div style={{ width: 20, height: 20, borderRadius: "50%", background: "rgba(124,58,237,0.2)", border: "1px solid rgba(124,58,237,0.5)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
