@@ -58,8 +58,8 @@ export default function Hero() {
         </p>
 
         {/* Vidéo */}
-        <div className="w-full" style={{ maxWidth: 800, animation: "fadeInUp 0.6s ease 300ms both" }}>
-          <div style={{ position: "relative", width: "100%", aspectRatio: "16/9", borderRadius: 16, overflow: "hidden", border: "1px solid rgba(124,58,237,0.3)", boxShadow: "0 0 60px rgba(124,58,237,0.2)" }}>
+        <div className="w-full max-w-3xl mx-auto px-0 md:px-0" style={{ animation: "fadeInUp 0.6s ease 300ms both" }}>
+          <div className="w-full aspect-video" style={{ position: "relative", borderRadius: 16, overflow: "hidden", border: "1px solid rgba(124,58,237,0.3)", boxShadow: "0 0 60px rgba(124,58,237,0.2)" }}>
             {YOUTUBE_VIDEO_ID ? (
               <iframe src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?rel=0`} allowFullScreen title="Présentation de la formation" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: "none" }} />
             ) : (
