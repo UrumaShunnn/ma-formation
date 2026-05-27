@@ -24,8 +24,8 @@ export default function Hero() {
   return (
     <section
       id="presentation"
-      className="w-full min-h-screen px-4 md:px-8 pt-24 pb-16 flex flex-col items-center text-center"
-      style={{ position: "relative", background: "#0A0A0A", overflow: "hidden" }}
+      className="w-full min-h-screen px-4 md:px-8 pt-24 pb-16 flex flex-col items-center text-center relative z-10"
+      style={{ background: "#0A0A0A", overflow: "hidden" }}
     >
       {/* Grain */}
       <div aria-hidden="true" style={{ position: "absolute", inset: 0, backgroundImage: noiseSVG, backgroundRepeat: "repeat", backgroundSize: "128px 128px", opacity: 0.03, pointerEvents: "none", zIndex: 0 }} />

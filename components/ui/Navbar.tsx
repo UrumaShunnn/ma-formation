@@ -160,89 +160,49 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
-      <div
-        className={isMenuOpen ? "block md:hidden z-50" : "hidden"}
-        style={{
-          background: "#0A0A0A",
-          borderTop: "1px solid #7C3AED",
-          borderBottom: "1px solid #2A2A2A",
-        }}
-      >
-        <div style={{ display: "flex", justifyContent: "flex-end", padding: "12px 24px 0" }}>
-          <button
-            onClick={() => setIsMenuOpen(false)}
-            aria-label="Fermer le menu"
-            style={{
-              background: "none",
-              border: "1px solid #2A2A2A",
-              borderRadius: "50%",
-              width: 32,
-              height: 32,
-              color: "#9CA3AF",
-              fontSize: 16,
-              cursor: "pointer",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              transition: "border-color 200ms ease, color 200ms ease",
-            }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.borderColor = "#7C3AED";
-              (e.currentTarget as HTMLElement).style.color = "#FFFFFF";
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.borderColor = "#2A2A2A";
-              (e.currentTarget as HTMLElement).style.color = "#9CA3AF";
-            }}
-          >
-            ✕
-          </button>
-        </div>
-
-        <nav style={{ padding: "12px 24px 20px", display: "flex", flexDirection: "column", gap: 4 }}>
-          {navLinks.map((link) => {
-            const isActive = activeSection === link.href.replace("#", "");
-            return (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setIsMenuOpen(false)}
-                style={{
-                  fontSize: 15,
-                  color: isActive ? "#8B5CF6" : "#D1D5DB",
-                  fontWeight: isActive ? 600 : 400,
-                  padding: "10px 0",
-                  textDecoration: "none",
-                  borderBottom: "1px solid #1A1A1A",
-                  transition: "color 200ms ease",
-                }}
-              >
-                {link.label}
-              </a>
-            );
-          })}
-          <a
-            href={TYPEFORM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setIsMenuOpen(false)}
-            style={{
-              marginTop: 12,
-              background: "linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%)",
-              color: "#FFFFFF",
-              borderRadius: 8,
-              padding: "12px 20px",
-              fontSize: 15,
-              fontWeight: 600,
-              textDecoration: "none",
-              textAlign: "center",
-              display: "block",
-            }}
-          >
-            Candidater →
-          </a>
-        </nav>
+      {/* Mobile menu — fixed full-screen overlay below navbar */}
+      <div className={`fixed inset-0 top-[72px] z-40 bg-[#0A0A0A] flex-col p-6 gap-4 md:hidden overflow-y-auto ${isMenuOpen ? "flex" : "hidden"}`}>
+        {navLinks.map((link) => {
+          const isActive = activeSection === link.href.replace("#", "");
+          return (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={() => setIsMenuOpen(false)}
+              style={{
+                fontSize: 18,
+                color: isActive ? "#8B5CF6" : "#D1D5DB",
+                fontWeight: isActive ? 600 : 400,
+                padding: "14px 0",
+                textDecoration: "none",
+                borderBottom: "1px solid #1A1A1A",
+                transition: "color 200ms ease",
+              }}
+            >
+              {link.label}
+            </a>
+          );
+        })}
+        <a
+          href={TYPEFORM_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => setIsMenuOpen(false)}
+          style={{
+            marginTop: 16,
+            background: "linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%)",
+            color: "#FFFFFF",
+            borderRadius: 10,
+            padding: "14px 20px",
+            fontSize: 16,
+            fontWeight: 700,
+            textDecoration: "none",
+            textAlign: "center",
+            display: "block",
+          }}
+        >
+          Candidater →
+        </a>
       </div>
     </header>
   );
