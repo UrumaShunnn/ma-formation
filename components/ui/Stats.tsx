@@ -11,9 +11,27 @@ const bannerItems = [
 ];
 
 const stats = [
-  { icon: "👥", value: 250, suffix: "+", label: "Membres actifs", sublabel: "qui génèrent du chiffre" },
-  { icon: "💰", value: 1, suffix: "M€+", label: "Générés par nos membres", sublabel: "chiffre cumulé" },
-  { icon: "🚀", value: 90, suffix: "j", label: "Pour voir tes premiers résultats", sublabel: "accompagnement jusqu'au succès" },
+  {
+    icon: "⚡",
+    value: 30,
+    suffix: "j",
+    label: "Garantie résultats",
+    sublabel: "ou on t'accompagne jusqu'à ce que tu gagnes"
+  },
+  {
+    icon: "🎯",
+    value: 0,
+    suffix: "€ de départ",
+    label: "Pour commencer sur Vinted",
+    sublabel: "zéro capital requis"
+  },
+  {
+    icon: "🔥",
+    value: 20,
+    suffix: "k€/mois",
+    label: "Généré par Dylan",
+    sublabel: "à seulement 18 ans"
+  },
 ];
 
 function useCountUp(target: number, duration = 1800, start = false) {
