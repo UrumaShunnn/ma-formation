@@ -19,18 +19,11 @@ const stats = [
     sublabel: "ou on t'accompagne jusqu'à ce que tu gagnes"
   },
   {
-    icon: "🎯",
-    value: 0,
-    suffix: "€ de départ",
-    label: "Pour commencer sur Vinted",
-    sublabel: "zéro capital requis"
-  },
-  {
-    icon: "🔥",
-    value: 20,
-    suffix: "k€/mois",
-    label: "Généré par Dylan",
-    sublabel: "à seulement 18 ans"
+    icon: "💰",
+    value: 70,
+    suffix: "%",
+    label: "De marge minimum",
+    sublabel: "sur chaque produit vendu"
   },
 ];
 
@@ -73,7 +66,7 @@ function StatCard({ stat, delay }: { stat: (typeof stats)[number]; delay: number
       style={{
         flex: "1",
         minWidth: 200,
-        maxWidth: 320,
+        maxWidth: 380,
         background: "#111111",
         border: `1px solid ${hovered ? "rgba(124,58,237,0.5)" : "#2A2A2A"}`,
         borderRadius: 16,
@@ -126,7 +119,7 @@ export default function Stats() {
       {/* Compteurs */}
       <section style={{ width: "100%", paddingTop: 64, paddingBottom: 64, background: "#0A0A0A", position: "relative", zIndex: 1 }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 24px" }}>
-          <div style={{ display: "flex", gap: 24, flexWrap: "wrap", justifyContent: "center" }}>
+          <div style={{ display: "flex", gap: 24, justifyContent: "center", flexWrap: "wrap" }}>
             {stats.map((stat, i) => <StatCard key={i} stat={stat} delay={i * 120} />)}
           </div>
         </div>
