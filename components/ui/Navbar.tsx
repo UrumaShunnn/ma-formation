@@ -67,12 +67,9 @@ export default function Navbar() {
             fontFamily: "Syne, sans-serif",
             fontSize: 22,
             fontWeight: 800,
-            background: "linear-gradient(135deg, #8B5CF6 0%, #5B21B6 100%)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            backgroundClip: "text",
+            color: "#7C3AED",
           }}>
-            MaFormation
+            The Drop Klub
           </span>
         </a>
 

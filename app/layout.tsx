@@ -3,19 +3,19 @@ import "./globals.css";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 export const metadata: Metadata = {
-  title: "[TON NOM] — Formation E-commerce",
+  title: "The Drop Klub — Formation E-commerce",
   description:
     "Apprends à créer et scaler ta boutique e-commerce. +250 membres, méthodes testées, résultats prouvés. Lance ton business en 90 jours.",
   keywords: ["formation ecommerce", "dropshipping", "formation en ligne", "boutique en ligne", "tiktok ads", "facebook ads"],
-  authors: [{ name: "[TON NOM]" }],
-  creator: "[TON NOM]",
+  authors: [{ name: "The Drop Klub" }],
+  creator: "The Drop Klub",
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://ma-formation.vercel.app"),
   openGraph: {
-    title: "[TON NOM] — Formation E-commerce",
+    title: "The Drop Klub — Formation E-commerce",
     description:
       "Apprends à créer et scaler ta boutique e-commerce. +250 membres, méthodes testées, résultats prouvés.",
     url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://ma-formation.vercel.app",
-    siteName: "[TON NOM] Formation",
+    siteName: "The Drop Klub Formation",
     type: "website",
     locale: "fr_FR",
     images: [
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "[TON NOM] — Formation E-commerce",
+    title: "The Drop Klub — Formation E-commerce",
     description:
       "Apprends à créer et scaler ta boutique e-commerce. +250 membres, méthodes testées, résultats prouvés.",
     images: ["/og-image.svg"],

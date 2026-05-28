@@ -105,8 +105,8 @@ export default function Footer() {
 
           {/* Col 1: Logo + description + socials */}
           <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-            <span style={{ fontFamily: "Syne, sans-serif", fontWeight: 800, fontSize: 20, background: "linear-gradient(135deg, #8B5CF6 0%, #5B21B6 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-              MaFormation
+            <span style={{ fontFamily: "Syne, sans-serif", fontWeight: 800, fontSize: 20, color: "#7C3AED" }}>
+              The Drop Klub
             </span>
             <p style={{ color: "#6B7280", fontSize: 14, lineHeight: 1.7, margin: 0 }}>
               L&apos;accélérateur e-commerce qui t&apos;emmène du zéro à tes premiers chiffres d&apos;affaires en 90 jours.
@@ -148,7 +148,7 @@ export default function Footer() {
               WhatsApp
             </a>
             <a
-              href="mailto:contact@maformation.fr"
+              href="mailto:contact@thedropklub.com"
               style={{ display: "inline-flex", alignItems: "center", gap: 8, color: "#6B7280", fontSize: 14, textDecoration: "none", transition: "color 200ms ease" }}
               onMouseEnter={(e) => (e.currentTarget.style.color = "#D1D5DB")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "#6B7280")}
@@ -157,14 +157,14 @@ export default function Footer() {
                 <rect x="2" y="4" width="20" height="16" rx="3" stroke="currentColor" strokeWidth="1.6" />
                 <path d="M2 8l10 7 10-7" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
               </svg>
-              contact@maformation.fr
+              contact@thedropklub.com
             </a>
           </div>
         </div>
 
         {/* Bottom bar */}
         <div style={{ borderTop: "1px solid #1A1A1A", paddingTop: 24, display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 16 }}>
-          <p style={{ color: "#4B5563", fontSize: 13, margin: 0 }}>© 2025 Ton Nom. Tous droits réservés.</p>
+          <p style={{ color: "#4B5563", fontSize: 13, margin: 0 }}>© 2025 The Drop Klub. Tous droits réservés.</p>
           <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 8 }}>
             {legalLinks.map((link, i) => (
               <span key={link.href} style={{ display: "flex", alignItems: "center", gap: 8 }}>
