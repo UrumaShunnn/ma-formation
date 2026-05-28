@@ -99,7 +99,7 @@ export default function Testimonials() {
       <section id="temoignages" className="w-full py-16 md:py-24" style={{ background: "#0A0A0A" }}>
 
         {/* Header */}
-        <div className="max-w-6xl mx-auto px-6 md:px-8 text-center mb-12">
+        <div className="max-w-6xl mx-auto px-6 md:px-12 text-center mb-12">
           <h2 className="text-2xl md:text-4xl font-bold mb-4" style={{ fontFamily: "Syne, sans-serif", color: "#FFFFFF", lineHeight: 1.2 }}>
             Ils ont rejoint...{" "}
             <span style={{ background: "linear-gradient(135deg,#8B5CF6,#5B21B6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
@@ -116,7 +116,7 @@ export default function Testimonials() {
         </div>
 
         {/* Vidéos témoignages + confiance */}
-        <div className="max-w-6xl mx-auto px-6 md:px-8">
+        <div className="max-w-6xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {testimonials.map((t) => <TestimonialCard key={t.id} t={t} onPlay={openLightbox} />)}
           </div>

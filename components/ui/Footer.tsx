@@ -104,7 +104,7 @@ export default function Footer() {
       className="w-full pt-12 md:pt-16 pb-8"
       style={{ background: "#0A0A0A", borderTop: "1px solid #1A1A1A" }}
     >
-      <div className="max-w-6xl mx-auto px-6 md:px-8">
+      <div className="max-w-6xl mx-auto px-6 md:px-12">
 
         {/* 3 colonnes */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">

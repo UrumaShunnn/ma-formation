@@ -33,7 +33,7 @@ export default function Hero() {
       {/* Glow bottom-left */}
       <div aria-hidden="true" style={{ position: "absolute", bottom: -50, left: -100, width: 400, height: 400, borderRadius: "50%", background: "#5B21B6", opacity: 0.1, filter: "blur(160px)", pointerEvents: "none", zIndex: 0 }} />
 
-      <div className="max-w-4xl mx-auto px-6 md:px-8 flex flex-col items-center text-center gap-6 relative z-10">
+      <div className="max-w-4xl mx-auto px-6 md:px-12 flex flex-col items-center text-center gap-6 relative z-10">
 
         {/* Badge */}
         <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#1A1A1A", border: "1px solid rgba(124,58,237,0.4)", borderRadius: 100, padding: "6px 16px", animation: "pulse 2.5s ease-in-out infinite" }}>
@@ -93,8 +93,8 @@ export default function Hero() {
             href={TYPEFORM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="block w-full md:w-auto text-center"
-            style={{ background: "linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%)", color: "#FFFFFF", fontFamily: "Syne, sans-serif", fontWeight: 700, fontSize: 18, borderRadius: 12, padding: "16px 32px", textDecoration: "none", transition: "transform 200ms ease, box-shadow 200ms ease", boxShadow: "0 4px 24px rgba(124,58,237,0.3)" }}
+            className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white rounded-xl mx-auto"
+            style={{ background: "linear-gradient(135deg, #7C3AED, #5B21B6)", width: "auto", maxWidth: "400px", textDecoration: "none", transition: "transform 200ms ease, box-shadow 200ms ease", boxShadow: "0 4px 24px rgba(124,58,237,0.3)" }}
             onMouseEnter={(e) => { const el = e.currentTarget as HTMLElement; el.style.transform = "scale(1.03)"; el.style.boxShadow = "0 8px 40px rgba(124,58,237,0.5)"; }}
             onMouseLeave={(e) => { const el = e.currentTarget as HTMLElement; el.style.transform = "scale(1)"; el.style.boxShadow = "0 4px 24px rgba(124,58,237,0.3)"; }}
           >
