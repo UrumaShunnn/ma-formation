@@ -10,96 +10,59 @@ export default function StarField() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    const resize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = document.body.scrollHeight;
+    };
+    resize();
+    window.addEventListener("resize", resize);
 
-    const stars = Array.from({ length: 150 }, () => ({
+    const stars = Array.from({ length: 120 }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      radius: Math.random() * 1.5 + 0.3,
+      radius: Math.random() * 2.5 + 0.5,
+      baseOpacity: Math.random() * 0.5 + 0.2,
       opacity: Math.random(),
-      speed: Math.random() * 0.02 + 0.005,
-      twinkleSpeed: Math.random() * 0.03 + 0.01,
+      speed: Math.random() * 0.008 + 0.003,
       growing: Math.random() > 0.5,
+      color: Math.random() > 0.6
+        ? `rgba(180,150,255,`
+        : `rgba(255,255,255,`,
     }));
 
-    // Shooting stars
-    const shootingStars: any[] = [];
     let animId: number;
-
-    const addShootingStar = () => {
-      if (Math.random() > 0.97) {
-        shootingStars.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height * 0.5,
-          length: Math.random() * 100 + 50,
-          speed: Math.random() * 8 + 4,
-          opacity: 1,
-          angle: Math.PI / 6,
-        });
-      }
-    };
 
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       stars.forEach((star) => {
-        // Twinkle
         if (star.growing) {
-          star.opacity += star.twinkleSpeed;
-          if (star.opacity >= 1) star.growing = false;
+          star.opacity += star.speed;
+          if (star.opacity >= star.baseOpacity + 0.3) star.growing = false;
         } else {
-          star.opacity -= star.twinkleSpeed;
-          if (star.opacity <= 0.1) star.growing = true;
+          star.opacity -= star.speed;
+          if (star.opacity <= star.baseOpacity - 0.15) star.growing = true;
         }
+        star.opacity = Math.max(0.05, Math.min(1, star.opacity));
 
-        // Draw star with glow
+        // Outer glow
+        const glow = ctx.createRadialGradient(
+          star.x, star.y, 0,
+          star.x, star.y, star.radius * 6
+        );
+        glow.addColorStop(0, `${star.color}${star.opacity})`);
+        glow.addColorStop(0.4, `${star.color}${star.opacity * 0.3})`);
+        glow.addColorStop(1, `${star.color}0)`);
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.radius * 6, 0, Math.PI * 2);
+        ctx.fillStyle = glow;
+        ctx.fill();
+
+        // Core dot
         ctx.beginPath();
         ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
-        ctx.shadowBlur = star.radius * 4;
-        ctx.shadowColor = `rgba(180, 150, 255, ${star.opacity * 0.8})`;
+        ctx.fillStyle = `${star.color}${Math.min(1, star.opacity + 0.3)})`;
         ctx.fill();
-        ctx.shadowBlur = 0;
-
-        // Cross sparkle on bigger stars
-        if (star.radius > 1.2) {
-          ctx.strokeStyle = `rgba(255,255,255,${star.opacity * 0.4})`;
-          ctx.lineWidth = 0.5;
-          ctx.beginPath();
-          ctx.moveTo(star.x - star.radius * 3, star.y);
-          ctx.lineTo(star.x + star.radius * 3, star.y);
-          ctx.moveTo(star.x, star.y - star.radius * 3);
-          ctx.lineTo(star.x, star.y + star.radius * 3);
-          ctx.stroke();
-        }
-      });
-
-      // Shooting stars
-      addShootingStar();
-      shootingStars.forEach((s, i) => {
-        s.x += Math.cos(s.angle) * s.speed;
-        s.y += Math.sin(s.angle) * s.speed;
-        s.opacity -= 0.02;
-
-        const grad = ctx.createLinearGradient(
-          s.x, s.y,
-          s.x - Math.cos(s.angle) * s.length,
-          s.y - Math.sin(s.angle) * s.length
-        );
-        grad.addColorStop(0, `rgba(180,150,255,${s.opacity})`);
-        grad.addColorStop(1, "rgba(180,150,255,0)");
-        ctx.beginPath();
-        ctx.strokeStyle = grad;
-        ctx.lineWidth = 1.5;
-        ctx.moveTo(s.x, s.y);
-        ctx.lineTo(
-          s.x - Math.cos(s.angle) * s.length,
-          s.y - Math.sin(s.angle) * s.length
-        );
-        ctx.stroke();
-
-        if (s.opacity <= 0) shootingStars.splice(i, 1);
       });
 
       animId = requestAnimationFrame(draw);
@@ -107,15 +70,9 @@ export default function StarField() {
 
     draw();
 
-    const handleResize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-    window.addEventListener("resize", handleResize);
-
     return () => {
       cancelAnimationFrame(animId);
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("resize", resize);
     };
   }, []);
 
