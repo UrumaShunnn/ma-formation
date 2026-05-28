@@ -54,8 +54,7 @@ export default function Pricing() {
   return (
     <section
       id="rejoindre"
-      className="w-full py-16 md:py-24 relative overflow-hidden"
-      style={{ background: "#0A0A0A" }}
+      style={{ width: "100%", paddingTop: 64, paddingBottom: 64, background: "#0A0A0A", position: "relative", overflow: "hidden" }}
     >
       {/* Glow de fond centré */}
       <div
@@ -63,14 +62,14 @@ export default function Pricing() {
         style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: 600, height: 600, borderRadius: "50%", background: "#7C3AED", opacity: 0.06, filter: "blur(120px)", pointerEvents: "none" }}
       />
 
-      <div className="max-w-6xl mx-auto px-6 md:px-12 relative" style={{ zIndex: 1 }}>
+      <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 24px", position: "relative", zIndex: 1 }}>
 
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: 48 }}>
           <span style={{ display: "inline-block", background: "linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%)", borderRadius: 100, padding: "5px 16px", fontSize: 12, fontWeight: 700, color: "#FFFFFF", marginBottom: 20, fontFamily: "Syne, sans-serif", letterSpacing: "0.1em", textTransform: "uppercase" }}>
             Accès Limité
           </span>
-          <h2 className="text-2xl md:text-4xl font-bold mb-4 text-center" style={{ fontFamily: "Syne, sans-serif", color: "#FFFFFF", lineHeight: 1.15 }}>
+          <h2 style={{ fontFamily: "Syne, sans-serif", fontSize: "clamp(1.5rem, 3vw, 2.5rem)", fontWeight: 700, marginBottom: 16, textAlign: "center", color: "#FFFFFF", lineHeight: 1.15 }}>
             Rejoins la formation{" "}
             <span style={{ background: "linear-gradient(135deg, #8B5CF6 0%, #5B21B6 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
               aujourd&apos;hui
@@ -84,8 +83,11 @@ export default function Pricing() {
         {/* Carte pricing */}
         <div
           ref={ref}
-          className="max-w-xl mx-auto w-full p-6 md:p-12"
           style={{
+            maxWidth: 580,
+            margin: "0 auto",
+            width: "100%",
+            padding: 48,
             background: "linear-gradient(135deg, #111111 0%, #1A0A2E 100%)",
             border: "2px solid #7C3AED",
             borderRadius: 24,
@@ -149,7 +151,7 @@ export default function Pricing() {
         </div>
 
         {/* Social proof bas */}
-        <div className="max-w-xl mx-auto w-full mt-10" style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+        <div style={{ maxWidth: 580, margin: "40px auto 0", width: "100%", display: "flex", flexDirection: "column", gap: 12 }}>
           {miniTestimonials.map((t, i) => (
             <div
               key={i}

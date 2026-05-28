@@ -110,11 +110,11 @@ export default function FAQ() {
   const toggle = (i: number) => setOpenIndex((prev) => (prev === i ? null : i));
 
   return (
-    <section className="w-full py-16 md:py-24" style={{ background: "#0A0A0A" }}>
-      <div className="max-w-3xl mx-auto px-6 md:px-12">
+    <section style={{ width: "100%", paddingTop: 64, paddingBottom: 64, background: "#0A0A0A" }}>
+      <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 24px" }}>
 
         <div style={{ textAlign: "center", marginBottom: 48 }}>
-          <h2 className="text-2xl md:text-4xl font-bold mb-4 text-center" style={{ fontFamily: "Syne, sans-serif", color: "#FFFFFF", lineHeight: 1.2 }}>
+          <h2 style={{ fontFamily: "Syne, sans-serif", fontSize: "clamp(1.5rem, 3vw, 2.5rem)", fontWeight: 700, marginBottom: 16, textAlign: "center", color: "#FFFFFF", lineHeight: 1.2 }}>
             Questions{" "}
             <span style={{ background: "linear-gradient(135deg, #8B5CF6 0%, #5B21B6 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
               fréquentes

@@ -78,11 +78,11 @@ function MemberCard({ member }: { member: (typeof team)[number] }) {
       }}
     >
       {/* Photo + identité */}
-      <div className="flex flex-col md:flex-row gap-6 items-center md:items-start">
-        <div className="flex-shrink-0">
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 24, alignItems: "flex-start" }}>
+        <div style={{ flexShrink: 0 }}>
           <Avatar photo={member.photo} initials={member.initials} />
         </div>
-        <div className="w-full text-center md:text-left">
+        <div style={{ flex: 1, minWidth: 200 }}>
           <span style={{ display: "inline-block", background: "rgba(124,58,237,0.15)", border: "1px solid rgba(124,58,237,0.35)", borderRadius: 100, padding: "4px 14px", fontSize: 12, fontWeight: 600, color: "#8B5CF6", marginBottom: 12, fontFamily: "Syne, sans-serif", letterSpacing: "0.04em" }}>
             {member.role}
           </span>
@@ -96,7 +96,7 @@ function MemberCard({ member }: { member: (typeof team)[number] }) {
       </div>
 
       {/* Stats personnelles */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
         {member.stats.map((stat, i) => (
           <div key={i} style={{ background: "#1A1A1A", border: "1px solid #2A2A2A", borderRadius: 12, padding: "16px 20px", display: "flex", alignItems: "center", gap: 12 }}>
             <span style={{ fontSize: 24 }} role="img" aria-hidden="true">{stat.icon}</span>
@@ -125,11 +125,11 @@ function MemberCard({ member }: { member: (typeof team)[number] }) {
 
 export default function Team() {
   return (
-    <section id="equipe" className="w-full py-16 md:py-24" style={{ background: "#0A0A0A" }}>
-      <div className="max-w-6xl mx-auto px-6 md:px-12">
+    <section id="equipe" style={{ width: "100%", paddingTop: 64, paddingBottom: 64, background: "#0A0A0A" }}>
+      <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 24px" }}>
 
         <div style={{ textAlign: "center", marginBottom: 48 }}>
-          <h2 className="text-2xl md:text-4xl font-bold mb-4 text-center" style={{ fontFamily: "Syne, sans-serif", color: "#FFFFFF", lineHeight: 1.2 }}>
+          <h2 style={{ fontFamily: "Syne, sans-serif", fontSize: "clamp(1.5rem, 3vw, 2.5rem)", fontWeight: 700, marginBottom: 16, textAlign: "center", color: "#FFFFFF", lineHeight: 1.2 }}>
             Qui{" "}
             <span style={{ background: "linear-gradient(135deg, #8B5CF6 0%, #5B21B6 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
               suis-je ?
@@ -138,7 +138,7 @@ export default function Team() {
           <p style={{ color: "#6B7280", fontSize: 17 }}>Un entrepreneur de terrain, pas un vendeur de rêves.</p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 max-w-4xl mx-auto w-full">
+        <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
           {team.map((member, i) => (
             <MemberCard key={i} member={member} />
           ))}

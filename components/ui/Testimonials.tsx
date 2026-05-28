@@ -96,11 +96,11 @@ export default function Testimonials() {
 
   return (
     <>
-      <section id="temoignages" className="w-full py-16 md:py-24" style={{ background: "#0A0A0A" }}>
+      <section id="temoignages" style={{ width: "100%", paddingTop: 64, paddingBottom: 64, background: "#0A0A0A" }}>
 
         {/* Header */}
-        <div className="max-w-6xl mx-auto px-6 md:px-12 text-center mb-12">
-          <h2 className="text-2xl md:text-4xl font-bold mb-4" style={{ fontFamily: "Syne, sans-serif", color: "#FFFFFF", lineHeight: 1.2 }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 24px", textAlign: "center", marginBottom: 48 }}>
+          <h2 style={{ fontFamily: "Syne, sans-serif", fontSize: "clamp(1.5rem, 3vw, 2.5rem)", fontWeight: 700, marginBottom: 16, color: "#FFFFFF", lineHeight: 1.2 }}>
             Ils ont rejoint...{" "}
             <span style={{ background: "linear-gradient(135deg,#8B5CF6,#5B21B6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
               voici ce qui a changé
@@ -116,8 +116,8 @@ export default function Testimonials() {
         </div>
 
         {/* Vidéos témoignages + confiance */}
-        <div className="max-w-6xl mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 24px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 16 }}>
             {testimonials.map((t) => <TestimonialCard key={t.id} t={t} onPlay={openLightbox} />)}
           </div>
           <div style={{ textAlign: "center", marginTop: 48, paddingTop: 24, borderTop: "1px solid #1A1A1A" }}>

@@ -47,6 +47,9 @@ function StatCard({ stat, delay }: { stat: (typeof stats)[number]; delay: number
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
+        flex: "1",
+        minWidth: 200,
+        maxWidth: 320,
         background: "#111111",
         border: `1px solid ${hovered ? "rgba(124,58,237,0.5)" : "#2A2A2A"}`,
         borderRadius: 16,
@@ -97,9 +100,9 @@ export default function Stats() {
       </div>
 
       {/* Compteurs */}
-      <section className="w-full py-16" style={{ background: "#0A0A0A" }}>
-        <div className="max-w-6xl mx-auto px-6 md:px-12 w-full">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <section style={{ width: "100%", paddingTop: 64, paddingBottom: 64, background: "#0A0A0A" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 24px" }}>
+          <div style={{ display: "flex", gap: 24, flexWrap: "wrap", justifyContent: "center" }}>
             {stats.map((stat, i) => <StatCard key={i} stat={stat} delay={i * 120} />)}
           </div>
         </div>
