@@ -33,7 +33,7 @@ export default function Hero() {
       {/* Glow bottom-left */}
       <div aria-hidden="true" style={{ position: "absolute", bottom: -50, left: -100, width: 400, height: 400, borderRadius: "50%", background: "#5B21B6", opacity: 0.1, filter: "blur(160px)", pointerEvents: "none", zIndex: 0 }} />
 
-      <div className="max-w-4xl mx-auto px-4 md:px-8 flex flex-col items-center text-center gap-6 relative z-10">
+      <div className="max-w-4xl mx-auto px-6 md:px-8 flex flex-col items-center text-center gap-6 relative z-10">
 
         {/* Badge */}
         <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#1A1A1A", border: "1px solid rgba(124,58,237,0.4)", borderRadius: 100, padding: "6px 16px", animation: "pulse 2.5s ease-in-out infinite" }}>

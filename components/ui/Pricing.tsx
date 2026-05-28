@@ -63,7 +63,7 @@ export default function Pricing() {
         style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: 600, height: 600, borderRadius: "50%", background: "#7C3AED", opacity: 0.06, filter: "blur(120px)", pointerEvents: "none" }}
       />
 
-      <div className="max-w-6xl mx-auto px-4 md:px-8 relative" style={{ zIndex: 1 }}>
+      <div className="max-w-6xl mx-auto px-6 md:px-8 relative" style={{ zIndex: 1 }}>
 
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: 48 }}>

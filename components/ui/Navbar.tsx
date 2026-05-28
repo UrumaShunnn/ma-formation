@@ -38,7 +38,7 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full bg-[#0A0A0A]/95 backdrop-blur-md border-b border-[#2A2A2A]">
-      <div className="max-w-6xl mx-auto px-4 md:px-8 flex items-center justify-between h-16">
+      <div className="max-w-6xl mx-auto px-6 md:px-8 flex items-center justify-between h-16">
 
         {/* Logo */}
         <a href="#" aria-label="Accueil" className="flex items-center flex-shrink-0">

@@ -74,7 +74,7 @@ export default function Features() {
 
   return (
     <section id="programme-detail" className="w-full py-16 md:py-24" style={{ background: "#0A0A0A" }}>
-      <div className="max-w-6xl mx-auto px-4 md:px-8">
+      <div className="max-w-6xl mx-auto px-6 md:px-8">
 
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: 56 }}>
