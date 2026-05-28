@@ -87,6 +87,7 @@ export default function StarField() {
         height: "100%",
         zIndex: 0,
         pointerEvents: "none",
+        background: "rgba(124,58,237,0.05)",
       }}
     />
   );
