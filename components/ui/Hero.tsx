@@ -35,6 +35,7 @@ export default function Hero() {
         paddingLeft: 24,
         paddingRight: 24,
         position: "relative",
+        zIndex: 1,
         overflow: "hidden",
       }}
     >

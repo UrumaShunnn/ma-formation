@@ -73,7 +73,7 @@ export default function Features() {
   const block4 = useSlideIn("left");
 
   return (
-    <section id="programme-detail" style={{ width: "100%", paddingTop: 64, paddingBottom: 64, background: "#0A0A0A" }}>
+    <section id="programme-detail" style={{ width: "100%", paddingTop: 64, paddingBottom: 64, background: "#0A0A0A", position: "relative", zIndex: 1 }}>
       <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 24px" }}>
 
         {/* Header */}

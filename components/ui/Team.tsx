@@ -125,7 +125,7 @@ function MemberCard({ member }: { member: (typeof team)[number] }) {
 
 export default function Team() {
   return (
-    <section id="equipe" style={{ width: "100%", paddingTop: 64, paddingBottom: 64, background: "#0A0A0A" }}>
+    <section id="equipe" style={{ width: "100%", paddingTop: 64, paddingBottom: 64, background: "#0A0A0A", position: "relative", zIndex: 1 }}>
       <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 24px" }}>
 
         <div style={{ textAlign: "center", marginBottom: 48 }}>

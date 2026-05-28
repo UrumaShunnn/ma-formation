@@ -8,10 +8,12 @@ import Team from "@/components/ui/Team";
 import Pricing from "@/components/ui/Pricing";
 import FAQ from "@/components/ui/FAQ";
 import Footer from "@/components/ui/Footer";
+import StarField from "@/components/ui/StarField";
 
 export default function Home() {
   return (
-    <main className="flex flex-col min-h-screen" style={{ background: "#0A0A0A" }}>
+    <main style={{ display: "flex", flexDirection: "column", minHeight: "100vh", background: "#0A0A0A" }}>
+      <StarField />
       <Navbar />
       <Hero />
       <Stats />

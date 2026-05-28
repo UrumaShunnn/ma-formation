@@ -97,7 +97,7 @@ function FooterLink({ href, children }: { href: string; children: React.ReactNod
 
 export default function Footer() {
   return (
-    <footer style={{ width: "100%", paddingTop: 48, paddingBottom: 32, background: "#0A0A0A", borderTop: "1px solid #1A1A1A" }}>
+    <footer style={{ width: "100%", paddingTop: 48, paddingBottom: 32, background: "#0A0A0A", borderTop: "1px solid #1A1A1A", position: "relative", zIndex: 1 }}>
       <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 24px" }}>
 
         {/* 3 columns */}

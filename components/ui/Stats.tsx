@@ -87,7 +87,7 @@ export default function Stats() {
   return (
     <>
       {/* Banner */}
-      <div style={{ background: "#111111", borderTop: "1px solid #2A2A2A", borderBottom: "1px solid #2A2A2A", overflow: "hidden", padding: "14px 0" }}>
+      <div style={{ background: "#111111", borderTop: "1px solid #2A2A2A", borderBottom: "1px solid #2A2A2A", overflow: "hidden", padding: "14px 0", position: "relative", zIndex: 1 }}>
         <div style={{ display: "flex", width: "max-content", animation: "marquee 30s linear infinite" }}>
           {repeated.map((item, i) => (
             <span key={i} style={{ display: "inline-flex", alignItems: "center", gap: 20, paddingRight: 20, fontFamily: "Syne, sans-serif", fontSize: 13, fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: "#9CA3AF", whiteSpace: "nowrap" }}>
@@ -100,7 +100,7 @@ export default function Stats() {
       </div>
 
       {/* Compteurs */}
-      <section style={{ width: "100%", paddingTop: 64, paddingBottom: 64, background: "#0A0A0A" }}>
+      <section style={{ width: "100%", paddingTop: 64, paddingBottom: 64, background: "#0A0A0A", position: "relative", zIndex: 1 }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 24px" }}>
           <div style={{ display: "flex", gap: 24, flexWrap: "wrap", justifyContent: "center" }}>
             {stats.map((stat, i) => <StatCard key={i} stat={stat} delay={i * 120} />)}
