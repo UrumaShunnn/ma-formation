@@ -77,7 +77,7 @@ export default function Hero() {
         {/* H1 */}
         <h1 style={{
           fontFamily: "Syne, sans-serif",
-          fontSize: "clamp(2rem, 5vw, 3.5rem)",
+          fontSize: "clamp(2.5rem, 4.5vw, 4rem)",
           fontWeight: 900,
           lineHeight: 1.1,
           color: "white",

@@ -12,7 +12,7 @@ import StarField from "@/components/ui/StarField";
 
 export default function Home() {
   return (
-    <main style={{ display: "flex", flexDirection: "column", minHeight: "100vh", background: "#0A0A0A" }}>
+    <main style={{ display: "flex", flexDirection: "column", minHeight: "100vh", background: "transparent", position: "relative", zIndex: 1 }}>
       <StarField />
       <Navbar />
       <Hero />
