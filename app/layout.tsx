@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "[TON NOM] — Formation E-commerce",
   description:
     "Apprends à créer et scaler ta boutique e-commerce. +250 membres, méthodes testées, résultats prouvés. Lance ton business en 90 jours.",
-  keywords: ["formation ecommerce", "dropshipping", "shopify", "formation en ligne", "boutique en ligne", "tiktok ads", "facebook ads"],
+  keywords: ["formation ecommerce", "dropshipping", "formation en ligne", "boutique en ligne", "tiktok ads", "facebook ads"],
   authors: [{ name: "[TON NOM]" }],
   creator: "[TON NOM]",
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://ma-formation.vercel.app"),

@@ -8,7 +8,7 @@ const modules = [
   { n: "01", title: "Introduction & Fondamentaux", desc: "Comprendre le modèle e-commerce et poser les bases solides de ton business" },
   { n: "02", title: "Trouver un produit à fort potentiel", desc: "Les méthodes de recherche qui cartonnent pour identifier les gagnants" },
   { n: "03", title: "Approvisionnement & Logistique", desc: "Sourcing, fournisseurs fiables, supply chain optimisée" },
-  { n: "04", title: "Création de boutique", desc: "Shopify, design conversion-first, pages produit qui vendent" },
+  { n: "04", title: "Création de boutique", desc: "Design conversion-first, optimisation des fiches produits qui vendent" },
   { n: "05", title: "Fondamentaux Marketing", desc: "Bases du marketing digital appliqué au e-commerce" },
   { n: "06", title: "Créatives qui convertissent", desc: "Vidéos, visuels et copywriting qui transforment le scroll en achat" },
   { n: "07", title: "Publicité Payante", desc: "Facebook Ads, TikTok Ads, Google Ads — de zéro à tes premières ventes" },

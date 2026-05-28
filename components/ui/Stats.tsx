@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const bannerItems = ["E-COMMERCE","DROPSHIPPING","VINTED","SHOPIFY","FACEBOOK ADS","TIKTOK ADS","FORMATION","RÉSULTATS PROUVÉS"];
+const bannerItems = ["E-COMMERCE","DROPSHIPPING","VINTED","E-BOUTIQUE","FACEBOOK ADS","TIKTOK ADS","FORMATION","RÉSULTATS PROUVÉS"];
 
 const stats = [
   { icon: "👥", value: 250, suffix: "+", label: "Membres actifs", sublabel: "qui génèrent du chiffre" },

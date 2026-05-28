@@ -103,7 +103,7 @@ export default function Features() {
                   <span style={{ background: "rgba(124,58,237,0.2)", border: "1px solid rgba(124,58,237,0.4)", borderRadius: 100, padding: "3px 10px", fontSize: 11, fontWeight: 600, color: "#8B5CF6", whiteSpace: "nowrap" }}>Mis à jour 2025</span>
                 </div>
                 <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 12 }}>
-                  <CheckItem text="Création de boutique e-commerce" />
+                  <CheckItem text="Choisir la bonne plateforme de vente" />
                   <CheckItem text="Recherche de produits gagnants" />
                   <CheckItem text="Publicités Facebook, TikTok, Google" />
                   <CheckItem text="Scaling et automatisation" />
