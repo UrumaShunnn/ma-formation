@@ -105,8 +105,7 @@ export default function Features() {
                 <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 12 }}>
                   <CheckItem text="Choisir la bonne plateforme de vente" />
                   <CheckItem text="Recherche de produits gagnants" />
-                  <CheckItem text="Publicités Facebook, TikTok, Google" />
-                  <CheckItem text="Scaling et automatisation" />
+<CheckItem text="Scaling et automatisation" />
                   <CheckItem text="Module IA pour accélérer tes process" />
                 </ul>
               </div>
