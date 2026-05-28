@@ -96,11 +96,11 @@ export default function Testimonials() {
 
   return (
     <>
-      <section id="temoignages" className="w-full px-4 md:px-8 py-16 md:py-24" style={{ background: "#0A0A0A" }}>
+      <section id="temoignages" className="w-full py-16 md:py-24" style={{ background: "#0A0A0A" }}>
 
         {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-4xl font-bold mb-4 text-center" style={{ fontFamily: "Syne, sans-serif", color: "#FFFFFF", lineHeight: 1.2 }}>
+        <div className="max-w-6xl mx-auto px-4 md:px-8 text-center mb-12">
+          <h2 className="text-2xl md:text-4xl font-bold mb-4" style={{ fontFamily: "Syne, sans-serif", color: "#FFFFFF", lineHeight: 1.2 }}>
             Ils ont rejoint...{" "}
             <span style={{ background: "linear-gradient(135deg,#8B5CF6,#5B21B6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
               voici ce qui a changé
@@ -109,25 +109,23 @@ export default function Testimonials() {
           <p style={{ color: "#6B7280", fontSize: 16 }}>Des résultats réels, de vraies personnes.</p>
         </div>
 
-        {/* Screenshots */}
+        {/* Screenshots — full-width marquee, no px constraint */}
         <div style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: 64, overflow: "hidden" }}>
           <MarqueeRow items={screenshotRows[0]} direction="left" />
           <MarqueeRow items={screenshotRows[1]} direction="right" />
         </div>
 
-        {/* Vidéos témoignages */}
-        <div className="max-w-6xl mx-auto w-full px-4 md:px-0">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {/* Vidéos témoignages + confiance */}
+        <div className="max-w-6xl mx-auto px-4 md:px-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {testimonials.map((t) => <TestimonialCard key={t.id} t={t} onPlay={openLightbox} />)}
           </div>
-        </div>
-
-        {/* Confiance */}
-        <div style={{ textAlign: "center", marginTop: 48, padding: "24px 16px", borderTop: "1px solid #1A1A1A" }}>
-          <p style={{ fontSize: 15 }}>
-            <span style={{ color: "#F59E0B", letterSpacing: 2 }}>★★★★★</span>{" "}
-            <span style={{ color: "#D1D5DB" }}>Note moyenne : <strong style={{ color: "#FFFFFF", fontFamily: "Syne, sans-serif" }}>4.9/5</strong> basée sur les retours membres</span>
-          </p>
+          <div style={{ textAlign: "center", marginTop: 48, paddingTop: 24, borderTop: "1px solid #1A1A1A" }}>
+            <p style={{ fontSize: 15 }}>
+              <span style={{ color: "#F59E0B", letterSpacing: 2 }}>★★★★★</span>{" "}
+              <span style={{ color: "#D1D5DB" }}>Note moyenne : <strong style={{ color: "#FFFFFF", fontFamily: "Syne, sans-serif" }}>4.9/5</strong> basée sur les retours membres</span>
+            </p>
+          </div>
         </div>
       </section>
 

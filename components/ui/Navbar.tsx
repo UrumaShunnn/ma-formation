@@ -15,15 +15,8 @@ const TYPEFORM_URL = "https://form.typeform.com/to/XXXXXXXX";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const [logoError, setLogoError] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => {
     const sectionIds = navLinks.map((l) => l.href.replace("#", ""));
@@ -44,24 +37,11 @@ export default function Navbar() {
   const close = () => setIsOpen(false);
 
   return (
-    <header
-      className="fixed top-0 left-0 right-0 w-full z-50"
-      style={{
-        height: 60,
-        transition: "background 300ms ease, border-color 300ms ease",
-        background: scrolled ? "rgba(10,10,10,0.97)" : "rgba(10,10,10,0.85)",
-        backdropFilter: "blur(12px)",
-        WebkitBackdropFilter: "blur(12px)",
-        borderBottom: scrolled ? "1px solid #2A2A2A" : "1px solid transparent",
-      }}
-    >
-      {/* Main bar */}
-      <div
-        className="max-w-6xl mx-auto w-full flex items-center justify-between px-4 md:px-8"
-        style={{ height: 60 }}
-      >
+    <header className="fixed top-0 left-0 right-0 z-50 w-full bg-[#0A0A0A]/95 backdrop-blur-md border-b border-[#2A2A2A]">
+      <div className="max-w-6xl mx-auto px-4 md:px-8 flex items-center justify-between h-16">
+
         {/* Logo */}
-        <a href="#" aria-label="Accueil" style={{ display: "flex", alignItems: "center", flexShrink: 0 }}>
+        <a href="#" aria-label="Accueil" className="flex items-center flex-shrink-0">
           {!logoError && (
             <Image
               src="/logo.svg"
@@ -80,7 +60,7 @@ export default function Navbar() {
           )}
         </a>
 
-        {/* Desktop nav links — hidden on mobile */}
+        {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => {
             const isActive = activeSection === link.href.replace("#", "");
@@ -107,7 +87,7 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* Desktop CTA — hidden on mobile */}
+        {/* Desktop CTA */}
         <a
           href={TYPEFORM_URL}
           target="_blank"
@@ -136,7 +116,7 @@ export default function Navbar() {
           Candidater →
         </a>
 
-        {/* Hamburger — visible on mobile only, on the RIGHT */}
+        {/* Hamburger — mobile only */}
         <button
           className="md:hidden"
           onClick={() => setIsOpen((o) => !o)}
@@ -159,13 +139,13 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile dropdown — absolute below navbar, not fullscreen */}
+      {/* Mobile dropdown — absolute below navbar */}
       {isOpen && (
         <div
           className="md:hidden"
           style={{
             position: "absolute",
-            top: 60,
+            top: 64,
             left: 0,
             right: 0,
             width: "100%",
@@ -197,7 +177,6 @@ export default function Navbar() {
               </a>
             );
           })}
-
           <a
             href={TYPEFORM_URL}
             target="_blank"

@@ -24,8 +24,7 @@ export default function Hero() {
   return (
     <section
       id="presentation"
-      className="w-full min-h-screen px-4 md:px-8 pt-24 pb-16 flex flex-col items-center text-center relative z-10"
-      style={{ background: "#0A0A0A", overflow: "hidden" }}
+      className="w-full pt-24 pb-16 md:pb-24 bg-[#0A0A0A] overflow-hidden relative z-10"
     >
       {/* Grain */}
       <div aria-hidden="true" style={{ position: "absolute", inset: 0, backgroundImage: noiseSVG, backgroundRepeat: "repeat", backgroundSize: "128px 128px", opacity: 0.03, pointerEvents: "none", zIndex: 0 }} />
@@ -34,7 +33,7 @@ export default function Hero() {
       {/* Glow bottom-left */}
       <div aria-hidden="true" style={{ position: "absolute", bottom: -50, left: -100, width: 400, height: 400, borderRadius: "50%", background: "#5B21B6", opacity: 0.1, filter: "blur(160px)", pointerEvents: "none", zIndex: 0 }} />
 
-      <div className="relative z-10 w-full max-w-6xl mx-auto flex flex-col items-center gap-8 px-4 md:px-0">
+      <div className="max-w-4xl mx-auto px-4 md:px-8 flex flex-col items-center text-center gap-6 relative z-10">
 
         {/* Badge */}
         <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#1A1A1A", border: "1px solid rgba(124,58,237,0.4)", borderRadius: 100, padding: "6px 16px", animation: "pulse 2.5s ease-in-out infinite" }}>
@@ -46,7 +45,7 @@ export default function Hero() {
 
         {/* H1 */}
         <h1
-          className="text-3xl md:text-5xl lg:text-6xl font-black leading-tight w-full text-center"
+          className="text-3xl md:text-5xl lg:text-6xl font-black leading-tight"
           style={{ fontFamily: "Syne, sans-serif", letterSpacing: "-0.02em", animation: "fadeInUp 0.6s ease 100ms both" }}
         >
           <span style={{ color: "#FFFFFF", display: "block" }}>Lance et scale ta boutique</span>
@@ -56,14 +55,14 @@ export default function Hero() {
         </h1>
 
         {/* Sous-titre */}
-        <p className="text-base md:text-xl text-center" style={{ color: "#9CA3AF", lineHeight: 1.7, maxWidth: 600, animation: "fadeInUp 0.6s ease 200ms both" }}>
+        <p className="text-base md:text-xl" style={{ color: "#9CA3AF", lineHeight: 1.7, maxWidth: 560, animation: "fadeInUp 0.6s ease 200ms both" }}>
           L&apos;accélérateur le plus complet pour réussir dans le e-commerce —
           méthodes testées, communauté active, résultats prouvés.
         </p>
 
         {/* Vidéo */}
         <div
-          className="w-full max-w-3xl mx-auto aspect-video rounded-2xl overflow-hidden mx-2 md:mx-0"
+          className="w-full aspect-video rounded-2xl overflow-hidden"
           style={{ position: "relative", border: "1px solid rgba(124,58,237,0.3)", boxShadow: "0 0 60px rgba(124,58,237,0.2)", animation: "fadeInUp 0.6s ease 300ms both" }}
         >
           {YOUTUBE_VIDEO_ID ? (
@@ -89,7 +88,7 @@ export default function Hero() {
         </div>
 
         {/* CTA + social proof */}
-        <div className="w-full flex flex-col items-center gap-5 px-2 md:px-0" style={{ animation: "fadeInUp 0.6s ease 400ms both" }}>
+        <div className="w-full flex flex-col items-center gap-5" style={{ animation: "fadeInUp 0.6s ease 400ms both" }}>
           <a
             href={TYPEFORM_URL}
             target="_blank"
@@ -121,7 +120,7 @@ export default function Hero() {
         </div>
 
         {/* Checklist */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full px-2 md:px-0" style={{ animation: "fadeInUp 0.6s ease 500ms both" }}>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full" style={{ animation: "fadeInUp 0.6s ease 500ms both" }}>
           {checklist.map((item, i) => (
             <div key={i} className="flex items-center gap-2 justify-center">
               <div style={{ width: 20, height: 20, borderRadius: "50%", background: "rgba(124,58,237,0.2)", border: "1px solid rgba(124,58,237,0.5)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>

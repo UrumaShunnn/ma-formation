@@ -4,17 +4,6 @@
 *, *::before, *::after { box-sizing: border-box; }
 html, body { overflow-x: hidden; width: 100%; max-width: 100%; }
 
-.section-container {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-@media (min-width: 768px) {
-  .section-container {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
-
 :root {
   --violet-primary: #7C3AED;
   --violet-dark: #6D28D9;

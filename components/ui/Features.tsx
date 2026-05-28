@@ -73,8 +73,8 @@ export default function Features() {
   const block4 = useSlideIn("left");
 
   return (
-    <section id="programme-detail" className="w-full px-4 md:px-8 py-16 md:py-24" style={{ background: "#0A0A0A" }}>
-      <div className="max-w-6xl mx-auto w-full px-4 md:px-0">
+    <section id="programme-detail" className="w-full py-16 md:py-24" style={{ background: "#0A0A0A" }}>
+      <div className="max-w-6xl mx-auto px-4 md:px-8">
 
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: 56 }}>
@@ -149,7 +149,7 @@ export default function Features() {
           {/* Bloc 4 — Bonus */}
           <div ref={block4.ref} className="p-6 md:p-12" style={{ ...block4.style, background: "#111111", borderRadius: 16, border: "1px solid #2A2A2A" }}>
             <h3 style={{ fontFamily: "Syne, sans-serif", fontWeight: 700, fontSize: 22, color: "#FFFFFF", marginBottom: 28, textAlign: "center" }}>Bonus réservés aux membres</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
               {bonusCards.map((card, i) => <BonusCard key={i} card={card} />)}
             </div>
           </div>

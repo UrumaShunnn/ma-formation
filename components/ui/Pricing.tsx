@@ -54,8 +54,8 @@ export default function Pricing() {
   return (
     <section
       id="rejoindre"
-      className="w-full px-4 md:px-8 py-16 md:py-24"
-      style={{ background: "#0A0A0A", position: "relative", overflow: "hidden" }}
+      className="w-full py-16 md:py-24 relative overflow-hidden"
+      style={{ background: "#0A0A0A" }}
     >
       {/* Glow de fond centré */}
       <div
@@ -63,7 +63,7 @@ export default function Pricing() {
         style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: 600, height: 600, borderRadius: "50%", background: "#7C3AED", opacity: 0.06, filter: "blur(120px)", pointerEvents: "none" }}
       />
 
-      <div className="max-w-6xl mx-auto w-full relative px-4 md:px-0" style={{ zIndex: 1 }}>
+      <div className="max-w-6xl mx-auto px-4 md:px-8 relative" style={{ zIndex: 1 }}>
 
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: 48 }}>

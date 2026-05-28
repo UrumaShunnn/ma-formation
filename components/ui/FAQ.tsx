@@ -110,8 +110,8 @@ export default function FAQ() {
   const toggle = (i: number) => setOpenIndex((prev) => (prev === i ? null : i));
 
   return (
-    <section className="w-full px-4 md:px-8 py-16 md:py-24" style={{ background: "#0A0A0A" }}>
-      <div className="max-w-3xl mx-auto w-full px-4 md:px-0">
+    <section className="w-full py-16 md:py-24" style={{ background: "#0A0A0A" }}>
+      <div className="max-w-3xl mx-auto px-4 md:px-8">
 
         <div style={{ textAlign: "center", marginBottom: 48 }}>
           <h2 className="text-2xl md:text-4xl font-bold mb-4 text-center" style={{ fontFamily: "Syne, sans-serif", color: "#FFFFFF", lineHeight: 1.2 }}>
