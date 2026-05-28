@@ -62,8 +62,8 @@ export default function Hero() {
 
         {/* Vidéo */}
         <div
-          className="w-full aspect-video rounded-2xl overflow-hidden"
-          style={{ position: "relative", border: "1px solid rgba(124,58,237,0.3)", boxShadow: "0 0 60px rgba(124,58,237,0.2)", animation: "fadeInUp 0.6s ease 300ms both" }}
+          className="w-full max-w-3xl mx-auto rounded-2xl overflow-hidden"
+          style={{ position: "relative", aspectRatio: "16/9", border: "1px solid rgba(124,58,237,0.3)", boxShadow: "0 0 60px rgba(124,58,237,0.2)", animation: "fadeInUp 0.6s ease 300ms both" }}
         >
           {YOUTUBE_VIDEO_ID ? (
             <iframe
@@ -93,8 +93,8 @@ export default function Hero() {
             href={TYPEFORM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white rounded-xl mx-auto"
-            style={{ background: "linear-gradient(135deg, #7C3AED, #5B21B6)", width: "auto", maxWidth: "400px", textDecoration: "none", transition: "transform 200ms ease, box-shadow 200ms ease", boxShadow: "0 4px 24px rgba(124,58,237,0.3)" }}
+            className="px-8 py-4 rounded-xl font-bold text-white text-lg"
+            style={{ background: "linear-gradient(135deg, #7C3AED, #5B21B6)", textDecoration: "none", transition: "transform 200ms ease, box-shadow 200ms ease", boxShadow: "0 4px 24px rgba(124,58,237,0.3)" }}
             onMouseEnter={(e) => { const el = e.currentTarget as HTMLElement; el.style.transform = "scale(1.03)"; el.style.boxShadow = "0 8px 40px rgba(124,58,237,0.5)"; }}
             onMouseLeave={(e) => { const el = e.currentTarget as HTMLElement; el.style.transform = "scale(1)"; el.style.boxShadow = "0 4px 24px rgba(124,58,237,0.3)"; }}
           >
@@ -120,7 +120,7 @@ export default function Hero() {
         </div>
 
         {/* Checklist */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full" style={{ animation: "fadeInUp 0.6s ease 500ms both" }}>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 w-full max-w-2xl mx-auto" style={{ animation: "fadeInUp 0.6s ease 500ms both" }}>
           {checklist.map((item, i) => (
             <div key={i} className="flex items-center gap-2 justify-center">
               <div style={{ width: 20, height: 20, borderRadius: "50%", background: "rgba(124,58,237,0.2)", border: "1px solid rgba(124,58,237,0.5)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
