@@ -157,14 +157,15 @@ export default function Hero() {
 
         {/* Checklist */}
         <div style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
-          gap: 12,
-          width: "100%",
-          maxWidth: 640,
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: 24,
+          marginTop: 16,
         }}>
           {checklist.map((item, i) => (
-            <div key={i} style={{ display: "flex", alignItems: "center", gap: 8, justifyContent: "center" }}>
+            <div key={i} style={{ display: "flex", alignItems: "center", gap: 8, whiteSpace: "nowrap" }}>
               <div style={{
                 width: 20,
                 height: 20,
