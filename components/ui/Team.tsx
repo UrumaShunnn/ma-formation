@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const team = [
   {
-    initials: "TN",
+    initials: "DS",
     photo: "",
     name: "The Drop Klub",
     role: "Fondateur — The Drop Klub",
