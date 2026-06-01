@@ -11,9 +11,9 @@ const team = [
     role: "Fondateur & Expert E-Commerce",
     bio: "J'ai commencé depuis mon appart avec 300€ en poche. Aujourd'hui je génère plusieurs dizaines de milliers d'euros par mois grâce au e-commerce. Mon objectif : te donner exactement ce dont j'aurais eu besoin quand j'ai démarré — pas du théorique, du concret et testé.",
     stats: [
-      { icon: "💰", value: "500k€+", label: "générés en ligne" },
-      { icon: "📅", value: "4 ans", label: "d'expérience" },
-      { icon: "👥", value: "250+", label: "élèves formés" },
+      { icon: "💰", value: "20k€", label: "par mois générés" },
+      { icon: "📅", value: "18", label: "ans seulement" },
+      { icon: "✅", value: "100%", label: "méthodes testées" },
     ],
     quote: "Je ne vends pas du rêve. Je te donne les mêmes outils, les mêmes méthodes et le même accès que ceux qui ont construit avant toi.",
   },
