@@ -3,14 +3,6 @@
 const TYPEFORM_URL = "https://form.typeform.com/to/XXXXXXXX";
 const YOUTUBE_VIDEO_ID = "";
 
-const avatars = [
-  { initials: "ML", bg: "#7C3AED" },
-  { initials: "SA", bg: "#6D28D9" },
-  { initials: "TR", bg: "#5B21B6" },
-  { initials: "KD", bg: "#8B5CF6" },
-  { initials: "JB", bg: "#4C1D95" },
-];
-
 const checklist = [
   "Formation complète",
   "Accompagnement à vie",
@@ -162,39 +154,6 @@ export default function Hero() {
         >
           Candidater maintenant →
         </a>
-
-        {/* Avatars + stars */}
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 12, flexWrap: "wrap" }}>
-          <div style={{ display: "flex" }}>
-            {avatars.map((av, i) => (
-              <div key={i} style={{
-                width: 32,
-                height: 32,
-                borderRadius: "50%",
-                background: av.bg,
-                border: "2px solid #0A0A0A",
-                marginLeft: i === 0 ? 0 : -8,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: 10,
-                fontWeight: 700,
-                color: "#FFFFFF",
-                zIndex: avatars.length - i,
-                position: "relative",
-                fontFamily: "Syne, sans-serif",
-              }}>
-                {av.initials}
-              </div>
-            ))}
-          </div>
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 2 }}>
-            <div style={{ display: "flex", gap: 2 }}>
-              {[...Array(5)].map((_, i) => <span key={i} style={{ color: "#F59E0B", fontSize: 13 }}>★</span>)}
-            </div>
-            <span style={{ color: "#9CA3AF", fontSize: 12 }}>+378 membres ont déjà rejoint</span>
-          </div>
-        </div>
 
         {/* Checklist */}
         <div style={{
