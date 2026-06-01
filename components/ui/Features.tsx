@@ -49,7 +49,7 @@ const bonusCards = [
   { icon: "🎯", title: "Accès événements exclusifs", desc: "Masterclasses & meetups réservés aux membres" },
   { icon: "📱", title: "Support 7j/7 en communauté", desc: "Répond à toutes tes questions en quelques heures" },
   { icon: "🤖", title: "Templates IA + scripts d'annonces", desc: "Gagne des semaines de travail grâce à l'IA" },
-  { icon: "📊", title: "Analyses de boutiques en direct", desc: "Débrief live sur des boutiques réelles" },
+  { icon: "📊", title: "Analyse des comptes en direct", desc: "Débrief live sur des comptes réels" },
 ];
 
 function BonusCard({ card }: { card: (typeof bonusCards)[number] }) {
