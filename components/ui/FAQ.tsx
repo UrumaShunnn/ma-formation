@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: "Qu'est-ce qui vous différencie des autres formations ?",
-    a: "Une approche terrain — méthodes testées sur de vraies boutiques, communauté active de membres qui chiffrent, coachs réactifs, ressources mises à jour chaque semaine, et un suivi réel, pas juste des vidéos.",
+    a: "Une approche terrain — méthodes testées sur de vrais profils, communauté active de membres qui chiffrent, coachs réactifs, ressources mises à jour chaque semaine, et un suivi réel, pas juste des vidéos.",
   },
   {
     q: "Y a-t-il une garantie ?",
