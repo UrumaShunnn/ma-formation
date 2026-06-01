@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     q: "Quel budget faut-il pour commencer ?",
-    a: "Tu peux démarrer avec 500€, mais pour appliquer la stratégie optimale, nous recommandons 1 500€ à 2 000€ (pub + outils + produits). On t'aide à adapter selon ton niveau.",
+    a: "Pour commencer sur Vinted, tu as besoin d'un minimum de 300€ pour acheter tes premiers produits. C'est tout. Pas de pub, pas d'outils coûteux — juste des produits à revendre avec une marge de 70% minimum.",
   },
   {
     q: "En combien de temps puis-je espérer des résultats ?",
