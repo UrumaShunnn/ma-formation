@@ -58,22 +58,6 @@ export default function Hero() {
         zIndex: 1,
       }}>
 
-        {/* Badge */}
-        <div style={{
-          display: "inline-flex",
-          alignItems: "center",
-          gap: 8,
-          background: "#1A1A1A",
-          border: "1px solid rgba(124,58,237,0.4)",
-          borderRadius: 100,
-          padding: "6px 16px",
-        }}>
-          <span style={{ fontSize: 14 }}>🔥</span>
-          <span style={{ fontSize: 13, fontWeight: 500, color: "#C4B5FD" }}>
-            +378 membres actifs
-          </span>
-        </div>
-
         {/* H1 */}
         <h1 style={{
           fontFamily: "Syne, sans-serif",
@@ -92,7 +76,7 @@ export default function Hero() {
             WebkitTextFillColor: "transparent",
             backgroundClip: "text",
           }}>
-            e-commerce en 90 jours
+            en 30 jours
           </span>
         </h1>
 
