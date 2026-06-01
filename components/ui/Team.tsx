@@ -8,7 +8,7 @@ const team = [
     initials: "TN",
     photo: "",
     name: "The Drop Klub",
-    role: "Fondateur & Expert E-Commerce",
+    role: "Fondateur — The Drop Klub",
     bio: "J'ai commencé depuis mon appart avec 300€ en poche. Aujourd'hui je génère plusieurs dizaines de milliers d'euros par mois grâce au e-commerce. Mon objectif : te donner exactement ce dont j'aurais eu besoin quand j'ai démarré — pas du théorique, du concret et testé.",
     stats: [
       { icon: "💰", value: "20k€", label: "par mois générés" },
