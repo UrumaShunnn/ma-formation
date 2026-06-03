@@ -39,7 +39,8 @@ html {
 }
 
 body {
-  background: var(--black-bg);
+  background: linear-gradient(135deg, #0A0A0A 0%, #0D0A1A 40%, #0A0A0A 70%, #0C0818 100%);
+  min-height: 100vh;
   color: var(--text-primary);
   font-family: "DM Sans", sans-serif;
   -webkit-font-smoothing: antialiased;

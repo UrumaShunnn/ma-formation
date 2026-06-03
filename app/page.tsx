@@ -16,6 +16,13 @@ export default function Home() {
   return (
     <main style={{ position: "relative", background: "transparent" }}>
       <StarField />
+      <div style={{
+        position: "fixed",
+        inset: 0,
+        zIndex: 0,
+        pointerEvents: "none",
+        background: "radial-gradient(ellipse at 20% 0%, rgba(124,58,237,0.12) 0%, transparent 50%), radial-gradient(ellipse at 80% 0%, rgba(109,40,217,0.1) 0%, transparent 50%), radial-gradient(ellipse at 50% 100%, rgba(91,33,182,0.08) 0%, transparent 60%)"
+      }} />
       <div style={{ position: "fixed", zIndex: 100, top: 0, left: 0, right: 0 }}>
         <Navbar />
       </div>
