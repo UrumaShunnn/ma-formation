@@ -46,7 +46,7 @@ function YouTubeIcon() {
 const socials = [
   { label: "Instagram", href: "https://www.instagram.com/portostdk", Icon: InstagramIcon },
   { label: "TikTok", href: "https://www.tiktok.com/@portos_tdk", Icon: TikTokIcon },
-  { label: "YouTube", href: "#", Icon: YouTubeIcon },
+  { label: "YouTube", href: "https://youtube.com/@portostdk", Icon: YouTubeIcon },
 ];
 
 function SocialButton({ social }: { social: (typeof socials)[number] }) {
