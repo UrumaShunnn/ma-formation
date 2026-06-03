@@ -100,7 +100,7 @@ export default function Features() {
               <div ref={block1Text.ref} style={{ ...block1Text.style, flex: 1, minWidth: 280 }}>
                 <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 12, marginBottom: 16 }}>
                   <h3 style={{ fontFamily: "Syne, sans-serif", fontWeight: 700, fontSize: 22, color: "#FFFFFF" }}>Une formation ultra-complète</h3>
-                  <span style={{ background: "rgba(124,58,237,0.2)", border: "1px solid rgba(124,58,237,0.4)", borderRadius: 100, padding: "3px 10px", fontSize: 11, fontWeight: 600, color: "#8B5CF6", whiteSpace: "nowrap" }}>Mis à jour 2025</span>
+                  <span style={{ background: "rgba(124,58,237,0.2)", border: "1px solid rgba(124,58,237,0.4)", borderRadius: 100, padding: "3px 10px", fontSize: 11, fontWeight: 600, color: "#8B5CF6", whiteSpace: "nowrap" }}>Mis à jour 2026</span>
                 </div>
                 <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 12 }}>
                   <CheckItem text="Choisir la bonne plateforme de vente" />
