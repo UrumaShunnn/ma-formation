@@ -59,7 +59,7 @@ export default function Hero() {
           color: "white",
           margin: 0,
         }}>
-          <span style={{ display: "block" }}>Lance et scale ta boutique</span>
+          <span style={{ display: "block" }}>Lance et scale ton business</span>
           <span style={{
             display: "block",
             marginTop: 6,
@@ -80,8 +80,7 @@ export default function Hero() {
           maxWidth: 560,
           margin: 0,
         }}>
-          L&apos;accélérateur le plus complet pour réussir dans le e-commerce —
-          méthodes testées, communauté active, résultats prouvés.
+          La méthode Vinted &amp; Dropshipping pour générer tes premiers revenus en ligne — testée, validée, et accessible à tous.
         </p>
 
         {/* Video container */}
