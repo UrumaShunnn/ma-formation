@@ -46,7 +46,7 @@ export default function Navbar() {
       top: 0,
       left: 0,
       right: 0,
-      zIndex: 50,
+      zIndex: 100,
       background: "rgba(10,10,10,0.95)",
       borderBottom: "1px solid #2A2A2A",
       backdropFilter: "blur(10px)",

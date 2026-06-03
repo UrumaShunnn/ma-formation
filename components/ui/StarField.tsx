@@ -10,70 +10,45 @@ export default function StarField() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = document.body.scrollHeight;
-    };
-    resize();
-    window.addEventListener("resize", resize);
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-    const stars = Array.from({ length: 120 }, () => ({
+    const stars = Array.from({ length: 200 }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      radius: Math.random() * 2.5 + 0.5,
-      baseOpacity: Math.random() * 0.5 + 0.2,
-      opacity: Math.random(),
-      speed: Math.random() * 0.008 + 0.003,
-      growing: Math.random() > 0.5,
-      color: Math.random() > 0.6
-        ? `rgba(180,150,255,`
-        : `rgba(255,255,255,`,
+      r: Math.random() * 1.8 + 0.4,
+      alpha: Math.random(),
+      delta: (Math.random() * 0.02 + 0.005) * (Math.random() > 0.5 ? 1 : -1),
     }));
 
-    let animId: number;
+    let raf: number;
 
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (const s of stars) {
+        s.alpha += s.delta;
+        if (s.alpha > 1) { s.alpha = 1; s.delta *= -1; }
+        if (s.alpha < 0) { s.alpha = 0; s.delta *= -1; }
 
-      stars.forEach((star) => {
-        if (star.growing) {
-          star.opacity += star.speed;
-          if (star.opacity >= star.baseOpacity + 0.3) star.growing = false;
-        } else {
-          star.opacity -= star.speed;
-          if (star.opacity <= star.baseOpacity - 0.15) star.growing = true;
-        }
-        star.opacity = Math.max(0.05, Math.min(1, star.opacity));
-
-        // Outer glow
-        const glow = ctx.createRadialGradient(
-          star.x, star.y, 0,
-          star.x, star.y, star.radius * 6
-        );
-        glow.addColorStop(0, `${star.color}${star.opacity})`);
-        glow.addColorStop(0.4, `${star.color}${star.opacity * 0.3})`);
-        glow.addColorStop(1, `${star.color}0)`);
         ctx.beginPath();
-        ctx.arc(star.x, star.y, star.radius * 6, 0, Math.PI * 2);
-        ctx.fillStyle = glow;
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${s.alpha})`;
+        ctx.shadowBlur = 6;
+        ctx.shadowColor = `rgba(180, 140, 255, ${s.alpha})`;
         ctx.fill();
-
-        // Core dot
-        ctx.beginPath();
-        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `${star.color}${Math.min(1, star.opacity + 0.3)})`;
-        ctx.fill();
-      });
-
-      animId = requestAnimationFrame(draw);
+      }
+      ctx.shadowBlur = 0;
+      raf = requestAnimationFrame(draw);
     };
 
     draw();
 
-    return () => {
-      cancelAnimationFrame(animId);
-      window.removeEventListener("resize", resize);
+    const onResize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
     };
+    window.addEventListener("resize", onResize);
+    return () => { cancelAnimationFrame(raf); window.removeEventListener("resize", onResize); };
   }, []);
 
   return (
@@ -83,11 +58,10 @@ export default function StarField() {
         position: "fixed",
         top: 0,
         left: 0,
-        width: "100%",
-        height: "100%",
-        zIndex: 0,
+        width: "100vw",
+        height: "100vh",
+        zIndex: 1,
         pointerEvents: "none",
-        background: "rgba(124,58,237,0.05)",
       }}
     />
   );
