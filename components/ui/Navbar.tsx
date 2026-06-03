@@ -10,7 +10,7 @@ const navLinks = [
   { label: "Rejoindre", href: "#rejoindre" },
 ];
 
-const TYPEFORM_URL = "https://form.typeform.com/to/XXXXXXXX";
+const TYPEFORM_URL = "https://tally.so/r/QKkZ91";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);

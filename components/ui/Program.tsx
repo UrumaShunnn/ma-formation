@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const TYPEFORM_URL = "https://form.typeform.com/to/XXXXXXXX";
+const TYPEFORM_URL = "https://tally.so/r/QKkZ91";
 
 const modules = [
   { number: "01", title: "Les bases", description: "Comprendre le modèle Vinted & Dropshipping et poser les fondations de ton business" },

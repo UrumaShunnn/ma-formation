@@ -1,6 +1,6 @@
 "use client";
 
-const TYPEFORM_URL = "https://form.typeform.com/to/XXXXXXXX";
+const TYPEFORM_URL = "https://tally.so/r/QKkZ91";
 const YOUTUBE_VIDEO_ID = "";
 
 const checklist = [

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const TYPEFORM_URL = "https://form.typeform.com/to/XXXXXXXX";
+const TYPEFORM_URL = "https://tally.so/r/QKkZ91";
 
 const includes = [
   "Formation e-commerce complète (12 modules)",

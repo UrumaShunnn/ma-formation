@@ -14,7 +14,7 @@ const securityHeaders = [
       "font-src 'self' https://fonts.gstatic.com",
       "img-src 'self' data: blob: https:",
       "media-src 'self' https:",
-      "frame-src https://www.youtube.com https://player.vimeo.com https://form.typeform.com",
+      "frame-src https://www.youtube.com https://player.vimeo.com https://tally.so",
       "connect-src 'self' https://www.google-analytics.com https://api.resend.com",
     ].join("; "),
   },
