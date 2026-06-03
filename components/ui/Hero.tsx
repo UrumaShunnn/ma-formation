@@ -17,7 +17,7 @@ export default function Hero() {
       style={{
         width: "100%",
         minHeight: "100vh",
-        background: "#0A0A0A",
+        background: "transparent",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",

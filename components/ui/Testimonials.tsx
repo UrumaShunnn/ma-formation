@@ -96,7 +96,7 @@ export default function Testimonials() {
 
   return (
     <>
-      <section id="temoignages" style={{ width: "100%", paddingTop: 64, paddingBottom: 64, background: "#0A0A0A", position: "relative", zIndex: 1 }}>
+      <section id="temoignages" style={{ width: "100%", paddingTop: 64, paddingBottom: 64, background: "transparent", position: "relative", zIndex: 1 }}>
 
         {/* Header */}
         <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 24px", textAlign: "center", marginBottom: 48 }}>

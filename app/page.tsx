@@ -14,7 +14,7 @@ const sectionStyle = { position: "relative" as const, zIndex: 2 };
 
 export default function Home() {
   return (
-    <main style={{ position: "relative", background: "#0A0A0A" }}>
+    <main style={{ position: "relative", background: "transparent" }}>
       <StarField />
       <div style={{ position: "fixed", zIndex: 100, top: 0, left: 0, right: 0 }}>
         <Navbar />

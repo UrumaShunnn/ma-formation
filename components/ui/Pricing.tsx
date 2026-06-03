@@ -54,7 +54,7 @@ export default function Pricing() {
   return (
     <section
       id="rejoindre"
-      style={{ width: "100%", paddingTop: 64, paddingBottom: 64, background: "#0A0A0A", position: "relative", zIndex: 1, overflow: "hidden" }}
+      style={{ width: "100%", paddingTop: 64, paddingBottom: 64, background: "transparent", position: "relative", zIndex: 1, overflow: "hidden" }}
     >
       {/* Glow de fond centré */}
       <div

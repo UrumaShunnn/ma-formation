@@ -117,7 +117,7 @@ export default function Stats() {
       </div>
 
       {/* Compteurs */}
-      <section style={{ width: "100%", paddingTop: 64, paddingBottom: 64, background: "#0A0A0A", position: "relative", zIndex: 1 }}>
+      <section style={{ width: "100%", paddingTop: 64, paddingBottom: 64, background: "transparent", position: "relative", zIndex: 1 }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 24px" }}>
           <div style={{ display: "flex", gap: 24, justifyContent: "center", flexWrap: "wrap" }}>
             {stats.map((stat, i) => <StatCard key={i} stat={stat} delay={i * 120} />)}
